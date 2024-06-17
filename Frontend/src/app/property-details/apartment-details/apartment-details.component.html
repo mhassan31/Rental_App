@@ -1,0 +1,135 @@
+<style>
+
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 0px;
+      /* border:1px solid black; */
+  
+    }
+  
+    th {
+      border: 1px solid #dddddd;
+      /* border: 1px solid black; */
+      /* border-radius: 10px; */
+      text-align: center;
+      padding: 8px;
+    }
+  
+    td {
+      border: 1px solid #dddddd;
+      /* border: 1px solid black; */
+      /* border-radius: 10px; */
+      text-align: center;
+      padding: 8px;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  
+    .center_content_table_area {
+      /* border : 1px solid black; */
+      background-color: #f5f9fc;
+      /* height : calc(100vh - 100px - 65px - 66.5px - 40px); */
+      height: 650px;
+      width: 97.5%;
+      margin-left: 1.25%;
+      margin-top: 20px;
+    }
+  
+    .pagination {
+      /* border : 1px solid black; */
+      height: 40px;
+      width: 97.5%;
+      margin-left: 1.25%;
+    }
+  
+    .btn {
+      /* background-color: DodgerBlue; */
+      background-color: #f0f0f0;
+      border: none;
+      color: black;
+      padding: 10px 14px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    .btn .tooltiptext {
+      visibility: hidden;
+      width: 90px;
+      background-color: #ffffff;
+      color: black;
+      font-size: small;
+      margin-top: 30px;
+      border: 1px solid black;
+  
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+  
+    .btn:hover .tooltiptext {
+      visibility: visible;
+      
+    }
+  
+    .btn:hover {
+      background-color: #688b96;
+      color:#ffffff;
+    }
+
+    .search_property_input {
+    width: 20%;
+    padding: 10px 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 0%;
+  }
+  
+  </style>
+    
+    
+    <div class="center_content_table_area">
+
+      <button style="height: 40px; width:3%;"><i class="fa fa-search"></i></button><input type="text" placeholder=" Search Property" class="search_property_input" [(ngModel)] = "searchText" >
+      <br>
+      <br>
+        <table>
+          <tr>
+            <th>Property Name</th>
+            <th>Property Permit No</th>
+            <th>Property Building No</th>
+            <th>Property Street No</th>
+            <th>Property Zone No</th>
+            <th>Contract</th>
+            <th>Detail</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+    
+          <tr *ngFor="let item of new_tab_data | paginate: { itemsPerPage:4, currentPage:p1} | filter:searchText">
+            
+            <td>{{item.main_property_name}}</td>
+            <td>{{item.main_property_legal_id}}</td>
+            <td>{{item.main_property_building_no}}</td>
+            <td>{{item.main_property_street_no}}</td>
+            <td>{{item.main_property_zone_no}}</td>
+            
+            <!-- <td><a href="http://localhost:8080/angular_app_Rental_Updated/php/{{item.main_property_contract}}"> <button class="btn"><i class="fa fa-eye"></i><span class="tooltiptext">View Contract</span></button></a></td> -->
+            <td><a href="{{document_path}}/php/{{item.main_property_contract}}"> <button class="btn"><i class="fa fa-eye"></i><span class="tooltiptext">View Contract</span></button></a></td>
+            <td><button class="btn" (click)="respectiveData(item.main_property_id)"><i class="fa fa-folder"></i> <span class="tooltiptext">View Detail</span></button></td>
+            <td><button class="btn" (click)="Update_property_detail(item.main_property_id)"><i class="fa fa-edit"></i><span class="tooltiptext">Edit Detail</span></button></td>
+            <td><button class="btn" (click)="delete_main_property(item.main_property_id)"><i class="fa fa-trash"></i><span class="tooltiptext">Delete</span></button></td>
+          
+          </tr>
+        </table>
+      </div>
+    
+      <div class="pagination">
+        <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
+        </div>
+    

@@ -1,0 +1,87 @@
+<style>
+
+    button{
+      border: 1px solid #0a4f5f;
+        background-color: #0a4f5f;
+        color: white;
+        margin-top: 25px;
+        height: 40px;
+        width: 10%;
+        border-radius: 5px;
+        margin-left: 5%;
+    }
+    
+    button:hover{
+      background-color: #678c96;
+    }
+    
+    button:active{
+      background-color: #678c96;
+      box-shadow: 0 2px #666;
+      transform: translateY(2px);
+    }
+
+    .outside_popup_body{
+        display: block;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        width : 100%;
+        height: calc(100vh);
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+
+    .popup_body{
+        width : 40%;
+        height: 300px;
+        box-shadow: 5px 5px 6px #ccc;
+        border-radius: 5px;
+        background-color: white;
+        margin-top: 300px;
+        margin-left: 30%;
+    }
+    
+    .heading{
+        /* border: 1px solid black; */
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        color : white;
+        background-color: #0a4f5f;
+    }
+
+    .heading p{
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 2%;
+    }
+
+    </style>
+    
+      
+      
+      <div class="outside_popup_body">
+      
+      <div class="popup_body">
+    
+        
+    <div class="heading"><p>Please enter OTP here</p></div>
+    
+    <!-- <p>{{otp_auth}}</p>
+    <p>{{resend_OTP_Validate}}</p> -->
+    <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+    
+        <input type="text" name="emailotp" formControlName="email_otp" placeholder="Email OTP">
+        <br>
+        <br>
+        <input type="text" name="mobileotp" formControlName="mobile_number_otp" placeholder="Mobile OTP">
+        <br>
+        <button  type="submit">submit</button>
+    </form>
+    
+    <button (click)="Cancel_Reg()">Cancel</button>
+    <button (click)="resend_OTP()">Resend OTP</button>
+    
+    </div>
+    
+    </div>

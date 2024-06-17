@@ -1,0 +1,613 @@
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    /* border : 1px solid black; */
+    width: 12%;
+    height: 121.1vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label {
+    /* background-color: #ffffff; */
+    width: 100%;
+    color: white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+    width: 60%;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(100vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+  }
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: #ffffff;
+    border: 1px solid #678c96;
+    height: 65px;
+    width: 88%;
+    float: right;
+    /* border-bottom: 1px solid #074a76; */
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+
+  /* ***********************************************Header CSS End******************************************* */
+
+
+
+  /* ***************************************Centre Content Start*********************************************  */
+
+  .centre_content {
+    background-color: white;
+    /* border: 1px solid black; */
+    height: calc(100vh - 80px - 65px - 40px);
+    width: 88%;
+    float: right;
+  }
+
+  .createbtn {
+    background-color: #678c96;
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 1.25%;
+
+  }
+
+  .createbtn:hover {
+    background-color: #45748e;
+  }
+
+  .createbtn:active {
+    background-color: #45748e;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+  .search_property_input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .search_separation_border {
+    padding: 10px;
+    background-color: #678c96;
+  }
+
+  .pagination {
+    /* border : 1px solid black; */
+    height: 40px;
+    width: 88%;
+    /* margin-left: 10%; */
+    float: right;
+
+  }
+
+  .center_content_data_area {
+    /* border: 1px solid red; */
+    background-color: #f1f1f1;
+    height: 675px;
+    width: 96%;
+    margin-top: 25px;
+    margin-left: 2%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .main_property_detail_area {
+    /* border : 1px solid blue; */
+    height: 675px;
+    width: 25%;
+    float: left;
+  }
+
+  .vertical_line {
+    border: 1px solid #678c96;
+    height: 620px;
+    width: 1px;
+    float: left;
+    margin-left: 1.5%;
+    margin-top: 25px;
+  }
+
+  .sub_property_detail_are {
+    /* border : 1px solid green; */
+    height: 675px;
+    width: 72.5%;
+    margin-left: 27.5%;
+  }
+
+  .property_data {
+    /* border: 1px solid black; */
+    height: 180px;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 0%;
+  }
+
+  .property_image {
+    /* border: 1px solid red; */
+    height: 180px;
+    width: 15%;
+    margin-left: 2%;
+    float: left;
+
+  }
+
+  .property_data img {
+    height: 190px;
+    width: 230px;
+  }
+
+  .main_property_detail {
+
+    border: 1px solid #678c96;
+    height: 275px;
+    width: 96%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 5%;
+
+
+  }
+
+  #main_property_heading {
+
+    height: 22px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 10px;
+    background-color: #678c96;
+    color: white;
+
+  }
+
+  .main_property_text {
+    padding: 8px 5px;
+    /* text-decoration:underline 1px; */
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+
+  /* .sub_property_detail_are{
+    border : 1px solid green;
+    height: 675px;
+    width: 72.5%;
+    margin-left: 27.5%;
+  } */
+
+  .sub_property_detail {
+
+    border: 1px solid #678c96;
+    height: 190px;
+    width: 30%;
+    margin-left: 7%;
+    float: left;
+
+  }
+
+  .Unit_text {
+    /* border : 1px solid black; */
+    padding: 6px 4px;
+    /* text-decoration:underline 1px; */
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .property_btn {
+
+    /* border: 1px solid green; */
+    height: 180px;
+    width: 15%;
+    margin-left: 5%;
+    float: left;
+
+  }
+
+  .property_btn button {
+
+    margin-top: 50px;
+    margin-left: 4%;
+
+  }
+
+  .edit_del_btn {
+    /* border : 1px solid black; */
+    height: 46px;
+    width: 31%;
+    margin-left: 65%;
+  }
+
+  .btn {
+    /* background-color: DodgerBlue; */
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #ffffff;
+    color: black;
+    /* text-align: center; */
+    /* border-radius: 6px; */
+    /* padding: 5px 0; */
+    font-size: small;
+    margin-top: 30px;
+    border: 1px solid black;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .btn:hover .tooltiptext {
+    visibility: visible;
+    /* background-color: #7697a1; */
+  }
+
+  .btn:hover {
+    background-color: #688b96;
+    color: #ffffff;
+  }
+
+  .blue_plate {
+    border: 4px solid black;
+    background-color: white;
+    /* color: white; */
+    height: 350px;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .bldg {
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    height: 160px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  .bldg_no {
+    /* border : 1px solid white; */
+    height: 110px;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 20px;
+    text-align: center;
+    padding: 45px 10px;
+    font-size: 80px;
+
+  }
+
+
+
+
+  .st {
+
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    height: 160px;
+    width: 47%;
+    margin-left: 2%;
+    border-radius: 8px;
+    margin-top: 5px;
+    float: left;
+
+  }
+
+  .zone {
+
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    height: 160px;
+    width: 47%;
+    margin-left: 51%;
+    border-radius: 8px;
+    margin-top: 5px;
+
+
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+    margin-top: 0px;
+
+  }
+
+  th {
+    border: 1px solid #dddddd;
+    background-color: #688b96;
+    color: white;
+    text-align: center;
+    padding: 8px;
+  }
+
+  td {
+    border: 1px solid #dddddd;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+
+
+
+
+
+
+  /* ****************************************Centre Content End***********************************************  */
+</style>
+
+
+<!-- ******************************************************************************************************* -->
+
+
+<!-- ***************************************//Header Start//***************************************************** -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+      <div class="dropdown-content">
+        <a routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ***************************************//Header End//******************************************************* -->
+
+
+<!-- ***************************************//Side Navigation Start//******************************************** -->
+
+<div class="side_nav_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+  <div class="side_nav_bar_content">
+    <!-- <label>Menu</label>
+    <div style="height: 1px; width : 100%; background-color: #ffffff;"></div> -->
+    <ul>
+      <br>
+      <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <!-- <h1>{{propertydetail1.landlord_id}}</h1> -->
+    </ul>
+  </div>
+</div>
+
+<!-- ***************************************//Side Navigation End//********************************************** -->
+
+<!-- ***************************************//Centre Content Start//********************************************* -->
+<div class="centre_content">
+
+  <div>
+    <button routerLink="/sub-property-upload" class="createbtn" (click)="pass_main_property_id()">Upload
+      Property</button>
+    <input type="text" placeholder=" Search Property" class="search_property_input" [(ngModel)]="searchText">
+  </div>
+
+  <div class="search_separation_border"></div>
+
+  <div class="center_content_data_area">
+
+    <div class="main_property_detail_area">
+      <div class="blue_plate">
+        <div class="bldg">
+          <div class="bldg_no"><a>{{newsessData4[0].mainproperty_building_no}}</a></div>
+          <div class="bldg_text" style="margin-left:2%;"> <a>Building No.</a></div>
+        </div>
+        <div class="st">
+          <div class="bldg_no" style="padding : 45px 0px; font-size:45px;">
+            <a>{{newsessData4[0].mainproperty_street_no}}</a></div>
+          <div class="bldg_text" style="margin-left:4%;"> <a>Street No.</a></div>
+        </div>
+        <div class="zone">
+          <div class="bldg_no" style="padding : 45px 0px; font-size:45px;"><a>{{newsessData4[0].mainproperty_zone_no}}</a>
+          </div>
+          <div class="bldg_text" style="margin-left:4%;"> <a>Zone No.</a></div>
+        </div>
+      </div>
+
+      <div class="main_property_detail">
+        <div class="main_property_text">
+          <a>&nbsp; Name : <br> &nbsp; &nbsp; &nbsp;{{newsessData4.main_property_name}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 10px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp;Permit No. : <br> &nbsp; &nbsp; &nbsp;{{newsessData4.main_property_legal_id}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 10px; margin-left: 4%;"></div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="vertical_line"></div>
+
+
+    <div class="sub_property_detail_are">
+
+      <br>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Unit No</th>
+          <th>Rent</th>
+          <th>Detail</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+
+        <tr *ngFor="let item of propertydetail1 | paginate: { itemsPerPage:4, currentPage:p} | filter:searchText">
+
+          <td>{{item.sub_property_name}}</td>
+          <td>{{item.sub_property_legal_id}}</td>
+          <td>{{item.sub_property_rent}}QAR</td>
+          <td><button class="btn" (click)="respectiveData(item.sub_property_id)"><i class="fa fa-folder"></i> <span
+                class="tooltiptext">View Detail</span></button></td>
+          <td><button class="btn" (click)="Update_sub_property_details(item.sub_property_id)"><i
+                class="fa fa-edit"></i><span class="tooltiptext">Edit Detail</span></button></td>
+          <td><button class="btn" (click)="Delete_sub_property(item.sub_property_id)"><i class="fa fa-trash"></i><span
+                class="tooltiptext">Delete</span></button></td>
+        </tr>
+      </table>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<!-- ***************************************//Centre Content End//*********************************************** -->

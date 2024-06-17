@@ -1,0 +1,35 @@
+Tenant Full Name on QID
+
+No country of residences
+
+Mobile no must need to start from +974 
+
+1st digit should not be 4 and freeze at 8 digits
+
+COnfirm Password required
+
+SMS Authentication on registration email and mobile
+
+To confirm QID is associated with Tenancy agreement CHeck Box
+
+Pop for unregistered Tenant should be in the middle
+
+Meesgae  : There is no property Registered under you QID please contact your landlord
+
+Common Area charges
+
+Discount on Property Charges
+
+Rent Increase
+
+Provision to make request to landlord
+
+
+
+Dashboard Tenant
+
+1. No. of property own (Residential)
+
+2. No. of property own (Home)
+
+

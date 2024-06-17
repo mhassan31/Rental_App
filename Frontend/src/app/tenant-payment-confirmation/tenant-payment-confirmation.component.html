@@ -1,0 +1,24 @@
+
+
+<form ngNoForm [action]="url" method="POST" class="paymentWidgets" data-brands="VISA MASTER">
+
+  Currency Code : <input type="text" name="CURRENCY_CODE" value="QAR" readonly><br>
+  Merchant ID : <input type="text" name="MERCHANT_ID" [value]="newsessData6.merchant_id" readonly><br>
+  Merchant Name: <input type="TEXT" name="MERCHANT_NAME" value="UAT Demo Merchant " /><br>
+  Token : <input type="text" name="TOKEN" [value]="newsessData6.token" readonly><br>
+  Success Url : <input type="text" name="SUCCESS_URL" [value]="newsessData6.Success_Url" readonly><br>
+  Failure Url : <input type="text" name="FAILURE_URL" [value]="newsessData6.Failure_Url" readonly><br>
+  Checkout Url : <input type="text" name="CHECKOUT_URL" [value]="newsessData6.Checkout_Url" readonly><br>
+  Customer Email : <input type="text" name="CUSTOMER_EMAIL_ADDRESS" value="engr.mhassan31@gmail.com" readonly><br>
+  Customer Mobile : <input type="text" name="CUSTOMER_MOBILE_NO" value="+97431464353" readonly><br>
+  Transaction amount : <input type="text" name="TXNAMT" [value]="newsessData6.Transaction_amount" readonly><br>
+  Basket ID : <input type="text" name="BASKET_ID" [value]="newsessData6.Basket_ID" readonly><br>
+  Transaction Date : <input type="text" name="ORDER_DATE" value="2022-12-15" readonly><br>
+  Signature : <input type="text" name="SIGNATURE" value="Tenant_payment" readonly><br>
+  Version: <input type="TEXT" name="VERSION" value="MERCHANT-CART-0.1" /><br >
+  Item Description : <input type="text" name="TXNDESC" value="Des_value"  readonly><br>
+  Procode : <input type="text" name="PROCCODE" value="00"  readonly><br>
+  Recurring : <INPUT  type="text" name="RECURRING_TXN" [value]="newsessData6.Recurring"><br><br>
+
+  <button type="submit">Submit</button>
+</form>

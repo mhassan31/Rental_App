@@ -1,0 +1,411 @@
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    width: 12%;
+    height: 120vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label {
+    /* background-color: #ffffff; */
+    width: 100%;
+    color: white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+    width: 60%;
+    height: 120px;
+     margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(120vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+  }
+
+
+
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: white;
+    /* border : 1px solid #074a76; */
+    height: 65px;
+    width: 88%;
+    float: right;
+    border-bottom: 1px solid #074a76;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* ***********************************************Header CSS End*********************************************** */
+
+  /* ***********************************************Center Content*************************************************** */
+
+  .center_content {
+    /* border : 1px solid black; */
+    height: calc(120vh - 80px - 65px);
+    width: 88%;
+    background-color: #f5f9fc;
+    /* background-color: white; */
+    float: right;
+  }
+
+  /* .form_outside_area {
+    border: 1px solid rgb(253, 253, 253);
+    background-color: white;
+    height: 680px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 35px;
+    border-top: 2px solid #678c96;
+
+  } */
+
+  .account_details {
+    border: 1px solid #678c96;
+    background-color: #678c96;
+    color: white;
+    height: 30px;
+    width: 80%;
+    margin-top: 35px;
+    margin-left: 10%;
+    box-shadow: 0px 4px 4px 0px;
+
+  }
+
+  .form_area {
+    /* border: 1px solid #678c96; */
+    background-color: #f5f9fc;
+    height: 800px;
+    width: 80%;
+    margin-left: 10%;
+    /* margin-top: 35px; */
+    box-shadow: 0px 4px 4px 0px;
+  }
+
+  form input {
+    width: 96%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 2%;
+    /* margin-top: 20px; */
+  }
+
+  form a {
+    font-size: 14px;
+    margin-left: 2%;
+    color: #678c96;
+    /* background-color: #45748e; */
+  }
+
+  .property_address input {
+
+    width: 40%;
+
+  }
+
+  form button {
+    background-color: #678c96;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 89%;
+    margin-top: 10px;
+  }
+
+  form button:hover {
+    background-color: #45748e;
+  }
+
+  form button:active {
+    background-color: #45748e;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+  .select_list {
+    /* border: 1px solid black; */
+    border: 1px solid #678c96;
+    background-color: #ffffff;
+    height: 160px;
+    width: 14%;
+    margin-left: 5%;
+    margin-top: 5%;
+    float: left;
+    /* box-shadow: 0px 4px 4px 0px; */
+  }
+
+  .select_list ul {
+    background-color: #ffffff;
+    width: 12.2%;
+    list-style-type: none;
+    position: absolute;
+  }
+
+  .select_list a {
+
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+
+  }
+
+
+
+  .select_list a:hover:not(.active) {
+
+    background-color: #0a4f5f;
+    color: #ffffff;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 100%;
+  }
+
+  .select_list a.active {
+
+    background-color: #0a4f5f;
+    color: #ffffff;
+
+  }
+
+  .Information{
+    /* border: 1px solid black; */
+    background-color: #ffffff;
+    height: 510px;
+    width : 70%;
+    margin-left: 22%;
+    margin-top: 5%;
+  }
+
+
+
+
+
+  /* ***********************************************Center Content End*********************************************** */
+</style>
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button  class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+      <div class="dropdown-content">
+        <a (click)="general_setting()" routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="side_nav_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+
+
+
+
+  <div class="side_nav_bar_content">
+    <!-- <label>Menu</label>
+    <div style="height: 1px; width : 100%; background-color: #ffffff;"></div> -->
+    <ul>
+      <br>
+      <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+    </ul>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="center_content">
+
+  <div class="select_list">
+    <ul>
+      <li>
+        <h3 style="margin-left: 6.5%; color: black;">User Profile</h3>
+      </li>
+      <li><a (click)="general_setting()">Account Settings</a></li>
+      <li><a (click)="password_reset()">Password Settings</a></li>
+      <li><a (click)="payment_setting()">Payment Settings</a></li>
+    </ul>
+  </div>
+
+
+  <div class="Information">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <div class="account_details">
+    <h6 style="margin-top:2px; margin-left: 1%;">Account Settings</h6>
+  </div>
+
+
+
+  <div class="form_area">
+    <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+      
+      <div style="height: 20px;"></div>
+      <a  hidden for="">Real Estate ID</a>
+      <input hidden type="text" name="landlordid" formControlName="landlord_id" readonly>
+
+      <a for="">Real Estate Name</a>
+      <input type="text" name="landlordid" formControlName="real_estate_name" readonly>
+
+      <a for="">Commercial Registration#</a>
+      <input type="text" name="regid" formControlName="reg_id" readonly>
+
+
+        <a for="">Full Name</a>
+        <input type="text" name="fullname" formControlName="full_name">
+
+
+      <a for="">Mobile Number</a>
+      <input type="text" name="mobilenumber" formControlName="mobile_number">
+
+      <a for="">Email Address</a>
+      <input type="text" name="email" formControlName="email">
+
+      <a for="">Password</a>
+      <input type="text" name="pswrd" formControlName="pswrd">
+
+      <button type="submit">Save Change</button>
+
+    </form>
+  </div> -->
+
+
+
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

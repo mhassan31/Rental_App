@@ -1,0 +1,113 @@
+<style>
+
+    .form_area {
+        border: 1px solid #678c96;
+        background-color: white;
+        height: 510px;
+        width: 100%;
+        margin-left: 0%;
+    
+        /* margin-top: 35px; */
+        box-shadow: 0px 4px 4px 0px;
+      }
+    
+      form input {
+        width: 96%;
+        padding: 10px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-left: 2%;
+        /* margin-top: 20px; */
+      }
+    
+      form a {
+        font-size: 14px;
+        margin-left: 2%;
+        color: #678c96;
+        /* background-color: #45748e; */
+      }
+    
+    
+    
+      form button:enabled {
+        background-color: #678c96;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-left: 83%;
+        margin-top: 10px;
+        height : 50px;
+        width : 15%;
+      }
+    
+      form button:disabled {
+        background-color: #678c96;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-left: 83%;
+        margin-top: 10px;
+        height : 50px;
+        width : 15%;
+        opacity: 0.5;
+      }
+    
+      form button:hover:enabled {
+        background-color: #45748e;
+      }
+    
+      form button:active:enabled {
+        background-color: #45748e;
+        box-shadow: 0 2px #666;
+        transform: translateY(2px);
+      }
+    
+      .form_heading{
+        background-color: white;
+        margin-left: 2%;
+        padding : 2px;
+      }
+    
+      span{
+        color : red;
+        margin-left: 2%;
+      }
+    
+      .input_border {
+        /* border: 1px solid black; */
+        height: 100px;
+        width: 100%;
+        
+      }
+    
+    </style>
+
+
+<div class="form_area">
+    <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+        <div  class="form_heading"><h3>Account Setting</h3></div>
+
+        
+        <!-- <input type="text" name="pswrd" formControlName="real_estate_id"> -->
+      <div class="input_border">
+        <a for="">Merchant ID</a>
+        <input type="text" name="pswrd" formControlName="Merchant_ID">
+        <!-- <span *ngIf="pswrd && pswrd.invalid && pswrd.touched">This field is required</span> -->
+      </div>
+
+      <div class="input_border">
+        <a for="">Secured Key</a> 
+        <input type="text" name="cpswrd" formControlName="Secured_Key">
+        <!-- <span *ngIf="f.c_pswrd.errors?.MustMatch">Passwords must match</span> -->
+      </div>
+
+      <div class="reg_btn">
+      <button type="submit" [disabled]="uploadForm.invalid">Save Change</button>
+    </div>
+    </form>
+</div>

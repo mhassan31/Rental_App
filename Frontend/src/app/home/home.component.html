@@ -1,0 +1,128 @@
+<style>
+  body {
+    background-image: url('assets/pay2m_bg_img.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(100vh);
+  }
+
+
+
+  .header {
+    border: 1px solid #0a4f5f;
+    height: 143px;
+    width: 100%;
+    background-color: #0a4f5f;
+  }
+
+  #header_img {
+    height: 140px;
+    width: 8%;
+  }
+
+  .content {
+    border: 1px solid white;
+    height: calc(100vh - 143px - 80px);
+    width: 100%;
+    
+  }
+
+  .content_position {
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 40%;
+    margin-top: 200px;
+    margin-left: 30%;
+  }
+
+
+
+  .signupbtn {
+    border: 1px solid #0a4f5f;
+    background-color: #0a4f5f;
+    color: white;
+    margin-top: 121.5px;
+    height: 40px;
+    width: 25%;
+    border-radius: 5px;
+    margin-left: 18%;
+    float: left;
+  }
+
+  .signupbtn:hover {
+    background-color: #678c96;
+  }
+
+  .signupbtn:active{
+  background-color: #678c96;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+  }
+
+  .loginbtn{
+    border: 1px solid #0a4f5f;
+    background-color: #0a4f5f;
+    color: white;
+    margin-top: 121.5px;
+    height: 40px;
+    width: 25%;
+    border-radius: 5px;
+    margin-left: 15%;
+  }
+
+  .loginbtn:hover {
+    background-color: #678c96;
+  }
+
+  .loginbtn:active{
+  background-color: #678c96;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+  }
+
+  .footer-left{
+    border : 1px solid #678c96;
+    background-color: #678c96;
+    height : 81px;
+    width : 12%;
+    margin-top: 79px;
+    
+  }
+
+
+
+</style>
+
+
+
+
+<body>
+
+
+
+  <div class="header">
+
+    <img id="header_img" src="assets/pay2m_logo.JPG">
+
+
+
+  </div>
+
+
+ <div class="content">
+
+    <div class="content_position">
+
+
+      <button class="signupbtn" routerLink="/select-account-type">Signup</button>
+      <button class="loginbtn" routerLink="/userlogin">Login</button>
+
+    </div>
+
+  </div>
+
+   <div class="footer-left">  
+    
+  </div>
+
+</body>

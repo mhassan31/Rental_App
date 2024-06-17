@@ -1,0 +1,74 @@
+
+
+<style>
+
+    
+    
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 5px;
+    }
+    
+    button:hover {
+      opacity:1;
+    }
+    
+    
+    .cancelbtn, .deletebtn {
+      float: left;
+      width: 50%;
+    }
+    
+    
+    .cancelbtn {
+      background-color: #ccc;
+      color: black;
+    }
+    
+    
+    .deletebtn {
+      background-color: #f44336;
+    }
+    
+    
+    .container {
+      padding: 16px;
+      text-align: center;
+    }
+    
+
+    
+    
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+
+    </style>
+    
+    
+
+
+    
+    
+      <div class="container">
+        
+        <h1>Delete Property</h1>
+        <p>Are you sure you want to delete this Property</p>
+       
+        <div class="clearfix">
+          <button type="button" (click)="closepopup()" class="cancelbtn">Cancel</button>
+          <button type="button" (click)="confirm_del()" class="deletebtn">Delete</button>
+        </div>
+      </div>
+    
+

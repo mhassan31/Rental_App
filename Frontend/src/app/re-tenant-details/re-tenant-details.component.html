@@ -1,0 +1,286 @@
+<!-- <p>userprofile (Landlord) works!</p>
+<p>{{newsessData.id}}</p>
+<p>{{newsessData.FName}}</p>
+<p>{{newsessData.LName}}</p>
+<p>{{newsessData.Email}}</p>
+<p>{{newsessData.Pswrd}}</p>
+<p>{{newsessData.accounttype}}</p> -->
+
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    width: 12%;
+    height:100vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label{
+    /* background-color: #ffffff; */
+    width: 100%;
+    color : white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+    width: 60%;
+    height: 120px;
+     margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(100vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width : 80%;
+  }
+
+
+
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: white;
+    /* border : 1px solid #074a76; */
+    height: 65px;
+    width: 88%;
+    float: right;
+    border-bottom: 1px solid #0a4f5f;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* ***********************************************Header CSS End*********************************************** */
+
+  /* ***********************************************Center Content*************************************************** */
+
+  .center_content {
+    /* border : 1px solid black; */
+    height: calc(100vh - 80px - 65px);
+    width: 88%;
+    background-color: #f5f9fc;
+    float: right;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .center_content_table_area{
+    /* border : 1px solid black; */
+    background-color: #f5f9fc;
+    height : calc(100vh - 100px - 65px - 40px - 30px);
+    width : 97.5%;
+    margin-left: 1.25%;
+    margin-top: 10px;
+  }
+
+  .Information{
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    height: 725px;
+    width : 96%;
+    margin-left: 2%;
+  }
+
+
+
+
+  /* ***********************************************Center Content End*********************************************** */
+</style>
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+      <div class="dropdown-content">
+        <a routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="side_nav_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+  
+
+ 
+  
+  <div class="side_nav_bar_content">
+     <!-- <label>Menu</label>
+     <div style="height: 1px; width : 100%; background-color: #ffffff;"></div> -->
+    <ul>
+      <br>
+      <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+    </ul>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="center_content">
+
+  <div class="center_content_table_area">
+      <table>
+        <tr>
+          <th> Name</th>
+          <th> Qatar ID</th>
+          <th> Email</th>
+          <th> Mobile</th>
+          <th> Register</th>
+          <th> Status</th>
+          <th> Detail</th>
+        </tr>
+  
+        <tr *ngFor="let item of dasboard_Data_result ">
+          <td>{{item.tenant_name}}</td>
+          <td>{{item.tenant_qid}}</td>
+          <td>{{item.tenant_email}}</td>
+          <td>{{item.tenant_mobile_number}}</td>
+          <td>{{item.tenant_reg}}</td>
+          <td>{{item.tenant_status}}</td>
+          <td><button (click)="respectiveData(item.sub_property_id, item.tenant_qid)">Detail</button></td>
+        </tr>
+      </table>
+    </div>
+
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

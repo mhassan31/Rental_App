@@ -1,0 +1,1062 @@
+<!-- <p>userprofile (Landlord) works!</p>
+<p>{{newsessData.id}}</p>
+<p>{{newsessData.FName}}</p>
+<p>{{newsessData.LName}}</p>
+<p>{{newsessData.Email}}</p>
+<p>{{newsessData.Pswrd}}</p>
+<p>{{newsessData.accounttype}}</p> -->
+
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    width: 12%;
+    height: 150vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label {
+    /* background-color: #ffffff; */
+    width: 100%;
+    color: white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+    width: 60%;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(100vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+  }
+
+
+
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: white;
+    /* border : 1px solid #074a76; */
+    height: 65px;
+    width: 88%;
+    float: right;
+    border-bottom: 1px solid #678c96;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* ***********************************************Header CSS End*********************************************** */
+
+  /* ***********************************************Center Content*************************************************** */
+
+  .center_content {
+    /* border : 1px solid black; */
+    height: calc(150vh - 80px - 65px);
+    width: 88%;
+    background-color: #f5f9fc;
+    float: right;
+  }
+
+  .center_content_frame {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    height: 1200px;
+    width: 96%;
+    margin-top: 25px;
+    margin-left: 2%;
+    box-shadow: 2px 2px 4px 4px #eaf0f4;
+  }
+
+  .property_status_frame {
+    border: 1px solid #678c96;
+    background-color: #f5f9fc;
+    height: 320px;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 25px;
+    float: left;
+    /* border-top : 10px solid #678c96; */
+
+  }
+
+  .property_status_frame_heading {
+    height: 25px;
+    width: 100%;
+    background-color: #f1f1f1;
+    color: #678c96;
+    font-size: 19px;
+  }
+
+  /* .property_status_frame_heading a{
+      margin-left: 66%;
+    } */
+
+  .property_status_frame p {
+    font-size: 22px;
+    margin-top: 120px;
+    margin-left: 35%;
+  }
+
+  .tenant_detail {
+    border: 1px solid #678c96;
+    /* border: 1px solid black; */
+
+    background-color: #f5f9fc;
+    height: 442px;
+    width: 74%;
+    float: right;
+    margin-top: 25px;
+    margin-right: 2%;
+  }
+
+  .tenant_detail_heading {
+    height: 25px;
+    width: 100%;
+    background-color: #678c96;
+    color: white;
+  }
+
+  .payment_frame {
+    border: 1px solid #678c96;
+    height: 100px;
+    width: 96%;
+    margin-top: 360px;
+    margin-left: 2%;
+  }
+
+  .payment_frame_heading {
+
+    height:25px;
+    width:100%;
+
+  }
+
+  #payment_id_label {
+    margin-left: 1%;
+  }
+
+  #payment_id_input {
+    margin-left: 1%;
+    width: 20%;
+  }
+
+  #rent_label {
+    margin-left: 1%;
+  }
+
+  #rent_input {
+    margin-left: 1%;
+    width: 20%;
+  }
+
+
+
+
+  #month_label {
+    margin-left: 2%;
+  }
+
+  #month_input {
+    margin-left: 1%;
+    width: 10%;
+  }
+
+  #year_label {
+    margin-left: 2%;
+  }
+
+  #year_input {
+    margin-left: 1%;
+    width: 10%;
+  }
+
+  #pay_btn {
+    margin-left: 2%;
+  }
+
+  .payment_status_frame {
+
+    border: 1px solid black;
+    height: 100px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 30px;
+
+  }
+
+  .payment_data {
+    /* border : 1px solid black; */
+    height: 477px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 20px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .payment_frame_2 {
+    /* border: 1px solid black; */
+    height: 100px;
+    width: 96%;
+    margin-top: 10px;
+    margin-left: 2%;
+  }
+
+  .blue_plate {
+    border: 4px solid white;
+    background-color: blue;
+    color: white;
+    height: 250px;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 120px 0px 0px 110px;
+    
+  }
+
+  .blue_plate a{
+    font-size: 60px;
+  }
+
+  .ten_info {
+    /* border: 1px solid red; */
+    height: 195px;
+    width: 30%;
+    float: left;
+  }
+
+  .main_property_text {
+    padding: 8px 5px;
+    /* text-decoration:underline 1px; */
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+
+  #main_property_heading {
+
+    height: 22px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 10px;
+    background-color: #678c96;
+    color: white;
+
+  }
+
+  .vertical_line {
+    border: 1px solid #678c96;
+    height: 175px;
+    width: 1px;
+    margin-left: 1%;
+    margin-top: 10px;
+    float: left;
+  }
+
+  .sub_property_detail_are {
+    /* border : 1px solid green; */
+    height: 195px;
+    width: 25%;
+    margin-left: 1%;
+    float: left;
+  }
+
+  .btn_area {
+    /* border : 1px solid green; */
+    height: 195px;
+    width: 35%;
+    margin-left: 59.5%;
+  }
+
+  .btn {
+    /* background-color: DodgerBlue; */
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    padding: 5px 14px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn .tooltiptext {
+    visibility: hidden;
+    width: 90px;
+    background-color: #ffffff;
+    color: black;
+    font-size: small;
+    margin-top: 30px;
+    border: 1px solid black;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .btn:hover .tooltiptext {
+    visibility: visible;
+
+  }
+
+  .btn:hover {
+    background-color: #688b96;
+    color: #ffffff;
+  }
+
+  .payment_form_area{
+    /* border:1px solid black; */
+    height:30px;
+    width: 100%;
+    margin-top: 17.5px;
+  }
+
+  .search_separation_border {
+    border: 1px solid black;
+    background-color: #678c96;
+    height: 10px;
+    width: 96%;
+    margin-top: 480px;
+    margin-left: 2%;
+  }
+
+  .input{
+    /* border: 1px solid black; */
+    height: 50px;
+    float : left;
+  }
+
+  #payment_id_input{
+    width: 70%;
+  }
+
+  /* ***********************************************Center Content End*********************************************** */
+</style>
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button class="dropbtn">{{newsessData.full_name}}</button>
+      <div class="dropdown-content">
+        <a routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="side_nav_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+
+
+
+
+  <div class="side_nav_bar_content">
+
+    <ul>
+      <br>
+      <li><a routerLink="/tenantprofile"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/tenant-my-property"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/Property_logo.jpg"> &nbsp; My Property</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+    </ul>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="center_content">
+  <div class="center_content_frame" >
+
+    <div class="property_status_frame" >
+      <div class="property_status_frame_heading">
+        <a> Property Status <a style="margin-left: 42%; padding: 5px 0px 5px 5px;">{{property_status}}</a></a>
+      </div>
+      <div class="blue_plate">
+        <a>{{newsessData2?.sub_property_legal_id}}</a>
+      </div>
+    </div>
+
+
+    <div class="tenant_detail" >
+      <div class="tenant_detail_heading"><a style="margin-left: 1%; font-size: 16px;">My Tenant Detail </a></div>
+
+      <div class="ten_info">
+        <div class="main_property_text">
+
+          <a>&nbsp; QID : &nbsp; &nbsp; &nbsp;{{newsessData2?.tenant_QID}}</a><br>
+          <div id="main_property_heading" style="height: 1px; width : 84%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp;Name : &nbsp; &nbsp; &nbsp;{{newsessData2?.tenant_name}}</a><br>
+          <div id="main_property_heading" style="height: 1px; width : 84%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp; Mobile : &nbsp; &nbsp; &nbsp;+974{{newsessData2?.tenant_mobile_number}}</a><br>
+          <div id="main_property_heading" style="height: 1px; width : 84%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp;Email : &nbsp; &nbsp; &nbsp;{{newsessData2?.tenant_email}}</a><br>
+          <div id="main_property_heading" style="height: 1px; width : 84%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+
+        </div>
+      </div>
+
+      <div class="vertical_line"></div>
+
+      <div class="sub_property_detail_are">
+
+        <div class="main_property_text">
+          <a>&nbsp; Contract# : &nbsp; &nbsp; &nbsp;{{newsessData2?.con_ref}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp;Start Date : &nbsp; &nbsp; &nbsp;{{newsessData2?.startdate}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp; End Date : &nbsp; &nbsp; &nbsp;{{newsessData2?.end_date}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+          <a>&nbsp;View Contract : &nbsp; &nbsp; &nbsp;<a
+              href="http://localhost:8080/angular_app_Rental_Updated/php/{{newsessData2?.cont_path}}">
+              <button class="btn" style="margin-top: -10px;"><i class="fa fa-eye"></i><span class="tooltiptext">View
+                  Contract</span></button></a></a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 5px; margin-left: 4%;"></div>
+          <br>
+        </div>
+      </div>
+
+      <div class="vertical_line"></div>
+
+      <div class="btn_area">
+        <div class="main_property_text">
+          <a>&nbsp; Rent Due Date Every Month : &nbsp; &nbsp;
+            &nbsp;{{newsessData2?.tenant_rent_date}}</a><br>
+          <div id="main_property_heading" style="height: 2px; width : 92%; margin-top: 5px; margin-left: 4%;"></div><br>
+        </div>
+      </div>
+
+      <div class="payment_frame_2">
+              <div class="payment_frame_heading"><h4 style="padding : 4px; font-style: italic; margin-left: 2%;">Pay Your Rent</h4></div>
+              <div id="main_property_heading" style="height: 1px; width : 96%; margin-top: 5px; margin-left: 2%;"></div>
+              <div class="payment_form_area">
+            <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+              
+              <div class="input" style="width : 28%;">
+              <label id="payment_id_label">Payment ID </label>&nbsp;
+                <input id="payment_id_input" type="text" name="payment_id" formControlName="payment_id" readonly>
+              </div>
+
+              <div class="input" style="width : 18%;">
+              <label id="rent_label">Rent </label> &nbsp;
+              <input id="rent_input" style="width : 50%;" type="text" name="rent" formControlName="rent" readonly>
+              </div>
+
+              <div class="input" style="width : 18%;">
+              <label id="month_label">Month</label>&nbsp;
+              <select id="month_input" style="width : 50%; height: 23px;" name="Month" class="year_list" formControlName="month">
+                  <!-- <option>Month</option> -->
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+              </select> <br>
+              <span style="color : Red" *ngIf="month && month.invalid && month.touched">This field is required</span>
+              </div>
+
+              <div class="input" style="width : 18%;">
+              <label id="year_label">Year</label>&nbsp;
+              <select id="year_input" style="width : 50%; height: 23px;" name="year" class="year_list" formControlName="year">
+                  <!-- <option>Year</option> -->
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                  <option value="2031">2031</option>
+                  <option value="2032">2032</option>
+                  <option value="2033">2033</option>
+                  <option value="2034">2034</option>
+                  <option value="2035">2035</option>
+                  <option value="2036">2036</option>
+                  <option value="2037">2037</option>
+                  <option value="2038">2038</option>
+                  <option value="2039">2039</option>
+                  <option value="2040">2040</option>
+                  <option value="2041">2041</option>
+                  <option value="2042">2042</option>
+                  <option value="2043">2043</option>
+                  <option value="2044">2044</option>
+                  <option value="2045">2045</option>
+                  <option value="2046">2046</option>
+                  <option value="2047">2047</option>
+                  <option value="2048">2048</option>
+                  <option value="2049">2049</option>
+                  <option value="2050">2050</option>
+                  <option value="2051">2051</option>
+                  <option value="2052">2052</option>
+                  <option value="2053">2053</option>
+                  <option value="2054">2054</option>
+                  <option value="2055">2055</option>
+                  <option value="2056">2056</option>
+                  <option value="2057">2057</option>
+                  <option value="2058">2058</option>
+                  <option value="2059">2059</option>
+                  <option value="2060">2060</option>
+                  <option value="2061">2061</option>
+                  <option value="2062">2062</option>
+                  <option value="2063">2063</option>
+                  <option value="2064">2064</option>
+                  <option value="2065">2065</option>
+                  <option value="2066">2066</option>
+                  <option value="2067">2067</option>
+                  <option value="2068">2068</option>
+                  <option value="2069">2069</option>
+                  <option value="2070">2070</option>
+                  <option value="2071">2071</option>
+                  <option value="2072">2072</option>
+                  <option value="2073">2073</option>
+                  <option value="2074">2074</option>
+                  <option value="2075">2075</option>
+                  <option value="2076">2076</option>
+                  <option value="2077">2077</option>
+                  <option value="2078">2078</option>
+                  <option value="2079">2079</option>
+                  <option value="2080">2080</option>
+                  <option value="2081">2081</option>
+                  <option value="2082">2082</option>
+                  <option value="2083">2083</option>
+                  <option value="2084">2084</option>
+                  <option value="2085">2085</option>
+                  <option value="2086">2086</option>
+                  <option value="2087">2087</option>
+                  <option value="2088">2088</option>
+                  <option value="2089">2089</option>
+                  <option value="2090">2090</option>
+                  <option value="2091">2091</option>
+                  <option value="2092">2092</option>
+                  <option value="2093">2093</option>
+                  <option value="2094">2094</option>
+                  <option value="2095">2095</option>
+                  <option value="2096">2096</option>
+                  <option value="2097">2097</option>
+                  <option value="2098">2098</option>
+                  <option value="2099">2099</option>
+                  <option value="2100">2100</option>
+                  <option value="2101">2101</option>
+                  <option value="2102">2102</option>
+                  <option value="2103">2103</option>
+                  <option value="2104">2104</option>
+                  <option value="2105">2105</option>
+                  <option value="2106">2106</option>
+                  <option value="2107">2107</option>
+                  <option value="2108">2108</option>
+                  <option value="2109">2109</option>
+                  <option value="2110">2110</option>
+                  <option value="2111">2111</option>
+                  <option value="2112">2112</option>
+                  <option value="2113">2113</option>
+                  <option value="2114">2114</option>
+                  <option value="2115">2115</option>
+                  <option value="2116">2116</option>
+                  <option value="2117">2117</option>
+                  <option value="2118">2118</option>
+                  <option value="2119">2119</option>
+                  <option value="2120">2120</option>
+                  <option value="2121">2121</option>
+                  <option value="2122">2122</option>
+              </select><br>
+              <span style="color : Red" *ngIf="year && year.invalid && year.touched">This field is required</span>
+            </div>
+
+            <div class="input" style="width : 18%;">
+              <button id="pay_btn" style="margin-left: 0%;" [disabled]="uploadForm.invalid" type="submit">Pay Now</button>
+            </div>
+
+          </form>
+        </div>
+        </div>
+
+        <div class="payment_frame_2">
+
+          <div class="payment_frame_heading"><h4 style="padding : 4px; font-style: italic; margin-left: 2%;">Pay with Your Save Card</h4></div>
+          <div id="main_property_heading" style="height: 1px; width : 96%; margin-top: 5px; margin-left: 2%;"></div>
+          <div class="payment_form_area">
+            <form [formGroup]="uploadForm_Rec" (ngSubmit)="onUpload_Rec()" *ngIf="uploadForm_Rec">
+
+             
+
+
+              <div class="input" style="width : 28%;">
+                <label id="payment_id_label">Payment ID </label>&nbsp;
+                  <input id="payment_id_input" type="text" name="payment_id" formControlName="payment_id" readonly>
+                </div>
+  
+                <div class="input" style="width : 14%;">
+                <label id="rent_label">Rent </label> &nbsp;
+                <input id="rent_input" style="width : 50%;" type="text" name="rent" formControlName="rent" readonly>
+                </div>
+  
+                <div class="input" style="width : 14%;">
+                <label id="month_label">Month</label>&nbsp;
+                <select id="month_input" style="width : 50%; height: 23px;" name="Month" class="year_list" formControlName="month">
+                    <!-- <option>Month</option> -->
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select> <br>
+                <span style="color : Red" *ngIf="month && month.invalid && month.touched">This field is required</span>
+                </div>
+  
+                <div class="input" style="width : 14%;">
+                <label id="year_label">Year</label>&nbsp;
+                <select id="year_input" style="width : 50%; height: 23px;" name="year" class="year_list" formControlName="year">
+                    <!-- <option>Year</option> -->
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                    <option value="2038">2038</option>
+                    <option value="2039">2039</option>
+                    <option value="2040">2040</option>
+                    <option value="2041">2041</option>
+                    <option value="2042">2042</option>
+                    <option value="2043">2043</option>
+                    <option value="2044">2044</option>
+                    <option value="2045">2045</option>
+                    <option value="2046">2046</option>
+                    <option value="2047">2047</option>
+                    <option value="2048">2048</option>
+                    <option value="2049">2049</option>
+                    <option value="2050">2050</option>
+                    <option value="2051">2051</option>
+                    <option value="2052">2052</option>
+                    <option value="2053">2053</option>
+                    <option value="2054">2054</option>
+                    <option value="2055">2055</option>
+                    <option value="2056">2056</option>
+                    <option value="2057">2057</option>
+                    <option value="2058">2058</option>
+                    <option value="2059">2059</option>
+                    <option value="2060">2060</option>
+                    <option value="2061">2061</option>
+                    <option value="2062">2062</option>
+                    <option value="2063">2063</option>
+                    <option value="2064">2064</option>
+                    <option value="2065">2065</option>
+                    <option value="2066">2066</option>
+                    <option value="2067">2067</option>
+                    <option value="2068">2068</option>
+                    <option value="2069">2069</option>
+                    <option value="2070">2070</option>
+                    <option value="2071">2071</option>
+                    <option value="2072">2072</option>
+                    <option value="2073">2073</option>
+                    <option value="2074">2074</option>
+                    <option value="2075">2075</option>
+                    <option value="2076">2076</option>
+                    <option value="2077">2077</option>
+                    <option value="2078">2078</option>
+                    <option value="2079">2079</option>
+                    <option value="2080">2080</option>
+                    <option value="2081">2081</option>
+                    <option value="2082">2082</option>
+                    <option value="2083">2083</option>
+                    <option value="2084">2084</option>
+                    <option value="2085">2085</option>
+                    <option value="2086">2086</option>
+                    <option value="2087">2087</option>
+                    <option value="2088">2088</option>
+                    <option value="2089">2089</option>
+                    <option value="2090">2090</option>
+                    <option value="2091">2091</option>
+                    <option value="2092">2092</option>
+                    <option value="2093">2093</option>
+                    <option value="2094">2094</option>
+                    <option value="2095">2095</option>
+                    <option value="2096">2096</option>
+                    <option value="2097">2097</option>
+                    <option value="2098">2098</option>
+                    <option value="2099">2099</option>
+                    <option value="2100">2100</option>
+                    <option value="2101">2101</option>
+                    <option value="2102">2102</option>
+                    <option value="2103">2103</option>
+                    <option value="2104">2104</option>
+                    <option value="2105">2105</option>
+                    <option value="2106">2106</option>
+                    <option value="2107">2107</option>
+                    <option value="2108">2108</option>
+                    <option value="2109">2109</option>
+                    <option value="2110">2110</option>
+                    <option value="2111">2111</option>
+                    <option value="2112">2112</option>
+                    <option value="2113">2113</option>
+                    <option value="2114">2114</option>
+                    <option value="2115">2115</option>
+                    <option value="2116">2116</option>
+                    <option value="2117">2117</option>
+                    <option value="2118">2118</option>
+                    <option value="2119">2119</option>
+                    <option value="2120">2120</option>
+                    <option value="2121">2121</option>
+                    <option value="2122">2122</option>
+                </select><br>
+                <span style="color : Red" *ngIf="year && year.invalid && year.touched">This field is required</span>
+              </div>
+
+              <div class="input" style="width : 20%;">
+
+                <label id="CardNo_label">Card</label>&nbsp;
+                <select id="Card_input" style="width : 80%; height: 23px;" name="Token_ID" formControlName="Token_ID">
+
+                  <option [value]="item.Token_ID" *ngFor="let item of res1">
+                    {{item.Card_Num}}
+                  </option>
+
+                </select><br>
+                <span style="color : Red" *ngIf="Token_ID && Token_ID.invalid && Token_ID.touched">This field is required</span>
+              
+              </div>
+  
+              <div class="input" style="width : 10%;">
+                <button id="pay_btn" style="margin-left: 0%;" [disabled]="uploadForm_Rec.invalid" type="submit">Pay Now</button>
+              </div>
+
+
+
+            </form>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="search_separation_border"></div>
+
+
+    <div class="payment_status_frame" style="margin-top: 20px; height: 90px;">
+
+      <div class="payment_frame_heading" style=" background-color: #678c96; color: white;"><h4 style="margin-left: 1%;" >Rent Payment</h4></div>
+
+      <div style="margin-top:12.5px;">
+
+      <form [formGroup]="uploadForm_Pay_Status" (ngSubmit)="onUpload_Payment_status()">
+
+        <label id="payment_id_label">Payment ID </label>
+        <input id="payment_id_input" style="width: 18%;" type="text" name="payment_id" formControlName="payment_id_pay_status" readonly>
+
+        <label id="year_label">Year</label>
+        <select id="year_input" name="year" class="year_list" formControlName="year_pay_status">
+          <!-- <option>Year</option> -->
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+          <option value="2031">2031</option>
+          <option value="2032">2032</option>
+          <option value="2033">2033</option>
+          <option value="2034">2034</option>
+          <option value="2035">2035</option>
+          <option value="2036">2036</option>
+          <option value="2037">2037</option>
+          <option value="2038">2038</option>
+          <option value="2039">2039</option>
+          <option value="2040">2040</option>
+          <option value="2041">2041</option>
+          <option value="2042">2042</option>
+          <option value="2043">2043</option>
+          <option value="2044">2044</option>
+          <option value="2045">2045</option>
+          <option value="2046">2046</option>
+          <option value="2047">2047</option>
+          <option value="2048">2048</option>
+          <option value="2049">2049</option>
+          <option value="2050">2050</option>
+          <option value="2051">2051</option>
+          <option value="2052">2052</option>
+          <option value="2053">2053</option>
+          <option value="2054">2054</option>
+          <option value="2055">2055</option>
+          <option value="2056">2056</option>
+          <option value="2057">2057</option>
+          <option value="2058">2058</option>
+          <option value="2059">2059</option>
+          <option value="2060">2060</option>
+          <option value="2061">2061</option>
+          <option value="2062">2062</option>
+          <option value="2063">2063</option>
+          <option value="2064">2064</option>
+          <option value="2065">2065</option>
+          <option value="2066">2066</option>
+          <option value="2067">2067</option>
+          <option value="2068">2068</option>
+          <option value="2069">2069</option>
+          <option value="2070">2070</option>
+          <option value="2071">2071</option>
+          <option value="2072">2072</option>
+          <option value="2073">2073</option>
+          <option value="2074">2074</option>
+          <option value="2075">2075</option>
+          <option value="2076">2076</option>
+          <option value="2077">2077</option>
+          <option value="2078">2078</option>
+          <option value="2079">2079</option>
+          <option value="2080">2080</option>
+          <option value="2081">2081</option>
+          <option value="2082">2082</option>
+          <option value="2083">2083</option>
+          <option value="2084">2084</option>
+          <option value="2085">2085</option>
+          <option value="2086">2086</option>
+          <option value="2087">2087</option>
+          <option value="2088">2088</option>
+          <option value="2089">2089</option>
+          <option value="2090">2090</option>
+          <option value="2091">2091</option>
+          <option value="2092">2092</option>
+          <option value="2093">2093</option>
+          <option value="2094">2094</option>
+          <option value="2095">2095</option>
+          <option value="2096">2096</option>
+          <option value="2097">2097</option>
+          <option value="2098">2098</option>
+          <option value="2099">2099</option>
+          <option value="2100">2100</option>
+          <option value="2101">2101</option>
+          <option value="2102">2102</option>
+          <option value="2103">2103</option>
+          <option value="2104">2104</option>
+          <option value="2105">2105</option>
+          <option value="2106">2106</option>
+          <option value="2107">2107</option>
+          <option value="2108">2108</option>
+          <option value="2109">2109</option>
+          <option value="2110">2110</option>
+          <option value="2111">2111</option>
+          <option value="2112">2112</option>
+          <option value="2113">2113</option>
+          <option value="2114">2114</option>
+          <option value="2115">2115</option>
+          <option value="2116">2116</option>
+          <option value="2117">2117</option>
+          <option value="2118">2118</option>
+          <option value="2119">2119</option>
+          <option value="2120">2120</option>
+          <option value="2121">2121</option>
+          <option value="2122">2122</option>
+        </select>
+
+
+        <button id="pay_btn" type="submit">Search Payments</button>
+
+      </form>
+    </div>
+
+    </div>
+
+    <div class="search_separation_border" style="margin-top: 20px;"></div>
+
+    <div style=" margin-top: 20px;">
+      <div class="payment_data">
+
+        <table>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Payment Month</th>
+            <th>Payment Year</th>
+            <th>Payment Status</th>
+          </tr>
+
+          <tr *ngFor="let item of payment_detail_Data_Tenant_result | paginate: { itemsPerPage:12, currentPage:p1}">
+            <td>{{item.transaction_id}}</td>
+            <td>{{item.payment_month}}</td>
+            <td>{{item.payment_year}}</td>
+            <td>{{item.payment_status}}</td>
+            <!-- <td><button (click)="respectiveData(item.main_property_id)">Detail</button></td> -->
+          </tr>
+        </table>
+        <div class="pagination">
+          <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

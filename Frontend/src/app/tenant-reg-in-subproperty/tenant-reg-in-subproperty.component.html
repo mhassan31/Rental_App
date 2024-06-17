@@ -1,0 +1,369 @@
+<!-- <p>userprofile (Landlord) works!</p>
+<p>{{newsessData.id}}</p>
+<p>{{newsessData.FName}}</p>
+<p>{{newsessData.LName}}</p>
+<p>{{newsessData.Email}}</p>
+<p>{{newsessData.Pswrd}}</p>
+<p>{{newsessData.accounttype}}</p> -->
+
+<style>
+    /* ***********************************************Side Nav Bar********************************************* */
+  
+    .side_nav_bar {
+      width: 12%;
+      height:100vh;
+      background-color: #0a4f5f;
+      float: left;
+    }
+  
+    .side_nav_bar label{
+      /* background-color: #ffffff; */
+      width: 100%;
+      color : white;
+    }
+  
+    .side_nav_bar_img {
+      width: 100%;
+      height: 200px;
+      background-color: #ffffff;
+      border: 1px solid #0a4f5f;
+    }
+  
+    .side_nav_bar_img img {
+      width: 110px;
+      height: 120px;
+      margin-top: 30px;
+      margin-left: 26%;
+    }
+  
+    .side_nav_bar_content {
+      /* border : 1px solid black; */
+      height: calc(100vh - 200px);
+      width: 100%;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 11.9%;
+      background-color: #0a4f5f;
+      position: absolute;
+    }
+  
+    li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+  
+    li a.active {
+      background-color: white;
+      color: black;
+    }
+  
+    li a:hover:not(.active) {
+      background-color: white;
+      color: black;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      width : 80%;
+    }
+  
+  
+  
+  
+    /* ***********************************************Side Nav Bar End***************************************** */
+  
+  
+  
+    /* ***********************************************Header CSS*********************************************** */
+  
+    .header {
+      background-color: white;
+      /* border : 1px solid #074a76; */
+      height: 65px;
+      width: 88%;
+      float: right;
+      border-bottom: 1px solid #678c96;
+    }
+  
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+  
+    .header-btn {
+      float: right;
+    }
+  
+    .dropbtn {
+      background-color: #678c96;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 6px;
+      margin-right: 6px;
+    }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 95%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      
+    }
+  
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #678c96;
+      width: 100%;
+      color: white;
+  
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+  
+    /* ***********************************************Header CSS End*********************************************** */
+  
+    /* ***********************************************Center Content*************************************************** */
+  
+    .center_content {
+      /* border : 1px solid black; */
+      height: calc(100vh - 80px - 65px);
+      width: 88%;
+      background-color: #f5f9fc;
+      float: right;
+    }
+
+    .center_content_data_area{
+    border : 1px solid black;
+    background-color:#f1f1f1;
+    height : 675px;
+    width: 96%;
+    margin-top: 25px;
+    margin-left: 2%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .property_data{
+    /* border : 1px solid black; */
+    height : 180px;
+    width : 92%;
+    margin-top: 30px;
+    margin-left: 4%;
+    /* float : right; */
+    /* margin-right: 14%; */
+  }
+
+  .property_data img{
+    height : 180px;
+    width : 100%;
+  }
+
+
+
+
+
+
+  .main_property_detail {
+
+border: 1px solid #678c96;
+height: 180px;
+width: 22%;
+float: left;
+margin-left: 1%;
+/* padding : 10px 5px; */
+
+}
+
+#main_property_heading{
+
+height : 22px;
+background-color: #678c96;
+color : white;
+
+}
+
+.main_property_text{
+padding : 8px 5px;
+text-decoration:underline 1px;
+
+}
+
+
+.sub_property_detail {
+
+border: 1px solid #678c96;
+height: 180px;
+width: 22%;
+margin-left: 1%;
+float: left;
+
+}
+
+.Unit_text{
+padding : 8px 5px;
+text-decoration:underline 1px;
+}
+
+.property_btn button{
+
+margin-top: 50px;
+margin-left: 50px;
+
+}
+
+
+
+  
+  
+  
+  
+    /* ***********************************************Center Content End*********************************************** */
+  </style>
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="header">
+    <div class="header-btn">
+      <div class="dropdown">
+        <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+        <div class="dropdown-content">
+          <a routerLink="/re-profile-setting">Profile</a>
+          <a href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="side_nav_bar">
+    <div class="side_nav_bar_img">
+      <img src="assets/pay2m_logo_2.JPG">
+    </div>
+    
+  
+   
+    
+    <div class="side_nav_bar_content">
+       <label>Menu</label>
+       <div style="height: 1px; width : 100%; background-color: #ffffff;"></div>
+      <ul>
+        <li><a routerLink="/tenantprofile">Dashboard</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/tenant-reg-in-property">Registration</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/tenant-my-property">My Property</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+
+      </ul>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="center_content">
+
+    <div class="center_content_data_area">
+
+        <div *ngFor="let item of newsessData2 | paginate: { itemsPerPage:3, currentPage:p}" class="property_data">
+          <div style="height : 180px; width : 15%; float : left;"><img src="http://localhost:8080/angular_app_Rental/php/{{item.sub_property_image}}" style="height : 100px; width:80%;"></div>
+          <!-- <div class="property_text">
+          <a>{{item.sub_property_id}}</a><br>
+          <a>{{item.sub_property_name}}</a><br>
+          <a>{{item.sub_property_legal_id}}</a><br>
+          <a>{{item.sub_property_rent}}</a><br>
+          </div> -->
+
+
+          <div class="sub_property_detail">
+            <div id = "main_property_heading"><h6>Unit Detail</h6></div>
+            <div class="Unit_text">
+            <a>ID : {{item.sub_property_id}}</a><br>
+            <a>Name : {{item.sub_property_name}}</a><br>
+            <a>Unit No. : {{item.sub_property_legal_id}}</a><br>
+            <a>Rent No. : {{item.sub_property_rent}} QAR</a><br>
+          </div>
+          </div>
+
+
+          <div class="main_property_detail">
+            <div id = "main_property_heading"><h6>Main Property Detail</h6></div>
+            <div class="main_property_text">
+            <a>ID : {{item.main_property_id}}</a><br>
+            <a>Name : {{item.main_property_name}}</a><br>
+            <a>Permit No. : {{item.main_property_legal_id}}</a><br>
+            <a>Building No. : {{item.mainproperty_building_no}}</a><br>
+            <a>Street No. : {{item.mainproperty_street_no}}</a><br>
+            <a>Zone No. : {{item.mainproperty_zone_no}}</a><br>
+          </div>
+          </div>
+
+          <div class="main_property_detail">
+            <div id = "main_property_heading"><h6>Real Estate Detail</h6></div>
+            <div class="main_property_text">
+            <a>ID : {{item.landlord_id}}</a><br>
+            <a>Name : {{item.real_estate_landlord_name}}</a><br>
+
+          </div>
+          </div>
+
+
+
+
+          <div class="property_btn">
+          <a><button (click)="respectiveData(item.sub_property_id)">Detail</button></a>
+        </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+  
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  

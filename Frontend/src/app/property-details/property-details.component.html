@@ -1,0 +1,484 @@
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    border: 1px solid #0a4f5f;
+    width: 12%;
+    height: 121.1vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label {
+    /* background-color: #ffffff; */
+    width: 100%;
+    color: white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+
+    width: 60%;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(100vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+  }
+
+
+
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: #ffffff;
+    /* border : 1px solid #074a76; */
+    height: 65px;
+    width: 88%;
+    float: right;
+    border-bottom: 1px solid #074a76;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+
+
+
+  /* ***************************************Centre Content Start*********************************************  */
+
+  .center_content {
+    /* border : 2px solid black; */
+    height: calc(100vh - 80px - 65px);
+    width: 88%;
+    background-color: #f5f9fc;
+    float: right;
+    position: relative;
+  }
+
+  .createbtn {
+    background-color: #678c96;
+    border: none;
+    color: white;
+    height : 35px;
+    width: 11%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 3%;
+    margin-top:2px;
+    float :  left;
+    border-radius: 5px;
+  }
+
+  .createbtn .tooltiptext {
+    visibility: hidden;
+    width: 90px;
+    background-color: #ffffff;
+    color: black;
+    /* text-align: center; */
+    /* border-radius: 6px; */
+    /* padding: 5px 0; */
+    font-size: small;
+    margin-top: 30px;
+    border: 1px solid black;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .createbtn:hover .tooltiptext {
+    visibility: visible;
+    /* background-color: #7697a1; */
+  }
+
+  .createbtn:hover {
+    background-color: #0c4c5c;
+  }
+
+  .createbtn:hover {
+    background-color: #45748e;
+  }
+
+  .createbtn:active {
+    background-color: #45748e;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+
+  .search_property_input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .search_separation_border {
+    /* border : 1px solid black; */
+    padding: 1px;
+    background-color: white;
+    color: white;
+  }
+
+  .search_separation_border a {
+    color: white;
+    margin-left: 1%;
+  }
+
+  .center_content_table_area {
+    /* border : 1px solid black; */
+    background-color: #f5f9fc;
+    /* height : calc(100vh - 100px - 65px - 66.5px - 40px); */
+    height: 650px;
+    width: 97.5%;
+    margin-left: 1.25%;
+    margin-top: 10px;
+  }
+
+
+
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* border:1px solid black; */
+
+  }
+
+  th {
+    border: 1px solid #dddddd;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    text-align: center;
+    padding: 8px;
+  }
+
+  td {
+    border: 1px solid #dddddd;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .pagination {
+    /* border : 1px solid black; */
+    height: 40px;
+    width: 97.5%;
+    margin-left: 1.5%;
+  }
+
+
+  .btn {
+    /* background-color: DodgerBlue; */
+    background-color: #688b96;
+    border: none;
+    color: white;
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn .tooltiptext {
+    visibility: hidden;
+    width: 90px;
+    background-color: #ffffff;
+    color: black;
+    /* text-align: center; */
+    /* border-radius: 6px; */
+    /* padding: 5px 0; */
+    font-size: small;
+    margin-top: 30px;
+    border: 1px solid black;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .btn:hover .tooltiptext {
+    visibility: visible;
+    /* background-color: #7697a1; */
+  }
+
+  .btn:hover {
+    background-color: #0c4c5c;
+  }
+
+  .Information{
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    height: 725px;
+    width : 96%;
+    margin-left: 2%;
+  }
+
+
+  .tab_btn{
+    width: 18%; 
+    height: 40px; 
+    border-top-right-radius: 5px; 
+    border-top-left-radius: 5px;
+    margin-left: 1%;
+    border:#ffffff;
+  }
+
+  .tab_btn:hover{
+
+    cursor: pointer;
+    /* background-color: #678c96; */
+    /* color:white; */
+  }
+
+  .tab_btn:focus{
+    background-color: #ffffff;
+    outline: #ffffff;
+  }
+
+
+
+ 
+
+  /* ****************************************Centre Content End***********************************************  */
+</style>
+
+
+
+
+<!-- ***************************************//Header Start//***************************************************** -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+      <div class="dropdown-content">
+        <a routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ***************************************//Header End//******************************************************* -->
+
+
+
+
+
+<!-- ***************************************//Side Navigation Start//******************************************** -->
+
+<div class="side_nav_bar" *ngIf="collapse_side_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+  <div class="side_nav_bar_content">
+    <ul>
+      <br>
+      <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;"
+            src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+    </ul>
+  </div>
+</div>
+
+<!-- ***************************************//Side Navigation End//********************************************** -->
+
+<!-- <mat-tab-group>
+  <mat-tab label="First"> Content 1 </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group> -->
+
+
+
+
+
+<!-- ***************************************//Centre Content Start//********************************************* -->
+<div class="center_content">
+
+<!-- <div class="center_content_search_bar">
+    <button routerLink="/property-upload" class="createbtn">Upload Property</button>
+    <input type="text" placeholder=" Search Property" class="search_property_input">
+  </div> -->
+
+   <!--  <div class="search_separation_border"> <a href=""> </a> </div>
+
+
+  <div class="center_content_table_area">
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Property Permit No</th>
+        <th>Property Building No</th>
+        <th>Property Street No</th>
+        <th>Property Zone No</th>
+        <th>Contract</th>
+        <th>Detail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+
+      <tr *ngFor="let item of propertydataresult1 | paginate: { itemsPerPage:4, currentPage:p1}">
+        
+        <td>{{item.main_property_name}}</td>
+        <td>{{item.main_property_legal_id}}</td>
+        <td>{{item.main_property_building_no}}</td>
+        <td>{{item.main_property_street_no}}</td>
+        <td>{{item.main_property_zone_no}}</td>
+        
+        <td><a href="http://localhost:8080/angular_app_Rental_Updated/php/{{item.main_property_contract}}"> <button class="btn"><i class="fa fa-eye"></i><span class="tooltiptext">View Contract</span></button></a></td>
+        <td><button class="btn" (click)="respectiveData(item.main_property_id)"><i class="fa fa-folder"></i> <span class="tooltiptext">View Detail</span></button></td>
+        <td><button class="btn" (click)="Update_property_detail(item.main_property_id)"><i class="fa fa-edit"></i><span class="tooltiptext">Edit Detail</span></button></td>
+        <td><button class="btn" (click)="delete_main_property(item.main_property_id)"><i class="fa fa-trash"></i><span class="tooltiptext">Delete</span></button></td>
+      
+      </tr>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
+    </div> -->
+
+<div style="margin-top: 20px;">
+
+  
+  <button routerLink="/property-upload" class="createbtn">Upload Property<span class="tooltiptext">Upload Property</span></button>
+
+    <div style="width: 81%; margin-left:15%; height: 40px;">
+      <button  (click)="Goto_Compound()" class="tab_btn">Compound</button>
+      <button  (click)="Goto_Villa()" class="tab_btn">Villa</button>
+      <button  (click)="Goto_Apartment()" class="tab_btn">Apartment</button>
+      <button  (click)="Goto_Office()" class="tab_btn">Office</button>
+      <button  (click)="Goto_Showroom()" class="tab_btn">Showroom</button>
+    </div>
+
+  </div>
+
+    <div class="Information">
+      <router-outlet></router-outlet>
+    </div>
+ 
+</div>
+
+
+<!-- ***************************************//Centre Content End//*********************************************** -->

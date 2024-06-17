@@ -1,0 +1,148 @@
+<style>
+
+.form_area {
+    border: 1px solid #678c96;
+    background-color: white;
+    height: 625px;
+    width: 100%;
+    margin-left: 0%;
+
+    /* margin-top: 35px; */
+    /* box-shadow: 0px 4px 4px 0px; */
+  }
+
+  form input {
+    width: 96%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 2%;
+    /* margin-top: 20px; */
+  }
+
+  form a {
+    font-size: 14px;
+    margin-left: 2%;
+    color: #678c96;
+    /* background-color: #45748e; */
+  }
+
+
+
+  form button:enabled {
+    background-color: #678c96;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 83%;
+    margin-top: 10px;
+    height : 50px;
+    width : 15%;
+  }
+
+  form button:disabled {
+    background-color: #678c96;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 83%;
+    margin-top: 10px;
+    height : 50px;
+    width : 15%;
+    opacity: 0.5;
+  }
+
+  form button:hover:enabled {
+    background-color: #45748e;
+  }
+
+  form button:active:enabled {
+    background-color: #45748e;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+
+
+  .form_heading{
+    background-color: white;
+    margin-left: 2%;
+    padding : 2px;
+  }
+  span{
+    color: red;
+    font-size: 10px;
+    margin: 2%;
+  }
+
+  .input_border {
+    /* border: 1px solid black; */
+    height: 100px;
+    width: 100%;
+    
+  }
+
+  #mobile_span1{
+    margin-left: 22%;
+  }
+  #mobile_span2{
+    margin-left: 22%;
+  }
+
+  #mobile_span3{
+    margin-left: 22%;
+  }
+
+
+
+</style>
+
+<div class="form_area">
+    <form [formGroup]="uploadForm" (ngSubmit)="onUpload()" *ngIf="uploadForm">
+        <div class="form_heading"><h3>Account Setting</h3></div>
+        <a hidden>Real Estate ID</a>
+      <input hidden type="text" name="landlordid" formControlName="landlord_id">
+
+      <div class="input_border">
+      <a>Real Estate Name</a>
+      <input type="text" name="rename" formControlName="real_estate_name">
+      <span *ngIf="real_estate_name && real_estate_name.invalid && real_estate_name.touched">This field is required</span>
+    </div>
+
+      <div class="input_border">
+      <a>Commercial Reg#</a>
+      <input type="text" name="regid" formControlName="reg_id" (keypress)="OnlyNumbersAllowed($event)">
+      <span *ngIf="reg_id && reg_id.invalid && reg_id.touched">This field is required</span>
+      <span *ngIf="blockaplhaError">Value Should be a Number</span>
+    </div>
+
+      <div class="input_border">
+      <a>Full Name</a>
+      <input type="text" name="fullname" formControlName="full_name">
+      <span *ngIf="full_name && full_name.invalid && full_name.touched">This field is required</span>
+    </div>
+
+      <div class="input_border">
+      <div><a>Mobile#</a></div>
+      <input type="tel" name="cc" formControlName="cc" readonly style="width : 18%; float : left;">
+      <input type="tel" name="mobilenumber" formControlName="mobile_number" (keypress)="fourNotAllowed($event)" (keydown)="blockfourAsFirstDigit($event)" style="width: 76%;">
+      <span id="mobile_span1" *ngIf="mobile_number && mobile_number.invalid && mobile_number.touched">This field is required</span>
+      <span id="mobile_span2" *ngIf="blockalphabetError">This is not a number</span>
+      <span id="mobile_span3" *ngIf="blockfourError">4 is not allowed as first digit</span>
+    </div>
+
+      <div class="input_border">
+      <a>Email</a>
+      <input type="text" name="email" formControlName="email">
+      <span *ngIf="email && email.invalid && email.touched">This field is required</span>
+    </div>
+
+      <button type="submit" [disabled]="uploadForm.invalid">Save Change</button>
+    </form>
+</div>
+

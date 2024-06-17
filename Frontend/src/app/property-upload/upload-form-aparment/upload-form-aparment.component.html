@@ -1,0 +1,253 @@
+
+
+<style>
+
+    .form_area {
+        border: 1px solid #678c96;
+        /* background-color: #f5f9fc; */
+        background-color: #ffffff;
+        height: 750px;
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 35px;
+        box-shadow: 0px 4px 4px 0px;
+      }
+    
+      .input_area{
+        /* border: 1px solid black; */
+        height: 470px;
+        width: 100%;
+        margin-top: 20px;
+      }
+    
+      .input_border {
+        /* border: 1px solid black; */
+        height: 80px;
+        width: 100%;
+        
+      }
+    
+      form input {
+        width: 96%;
+        padding: 10px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-left: 2%;
+      }
+    
+      form a {
+        font-size: 14px;
+        margin-left: 2%;
+        color: #678c96;
+        /* color: #ffffff; */
+        /* background-color: #45748e; */
+      }
+    
+      .reg_btn{
+        /* border: 1px solid black; */
+        height: 90px;
+        width: 100%;
+        margin-top: 0px;
+        padding: 0px 26px;
+      }
+    
+      form button:enabled {
+        background-color: #678c96;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-left: 89%;
+        margin-top: 10px;
+      }
+    
+      form button:hover:enabled{
+        background-color: #45748e;
+      }
+    
+      form button:active:enabled{
+        background-color: #45748e;
+        box-shadow: 0 2px #666;
+        transform: translateY(2px);
+      }
+    
+      form button:disabled {
+        background-color: #678c96;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-left: 89%;
+        margin-top: 10px;
+        opacity: 0.5;
+      }
+    
+      .property_address input {
+    
+        width: 82%;
+        margin-left: 6.5%;
+    
+      }
+    
+      .special_a{
+        /* border: 1px solid black; */
+        width : 18%;
+        height : 80px;
+        float : left;
+        padding: 20px 48px;
+      }
+    
+      .special_ip{
+        /* border: 1px solid blue; */
+        width : 82%;
+        height : 80px;
+        margin-left: 14%;
+    
+      }
+    
+      .upload_ip{
+        /* border: 1px solid blue; */
+        width : 84%;
+        height : 80px;
+        margin-left: 16%;
+      
+      }
+    
+      /* .ip_span{
+        border: 1px solid blue;
+        width : 86%;
+        height : 20px;
+      } */
+    
+      .building_no{
+        /* border : 1px solid red; */
+        width : 32.5%;
+        height : 80px;
+        float : left;
+      }
+    
+      .street_no{
+        /* border : 1px solid red; */
+        width : 32.5%;
+        height : 80px;
+        float:left;
+        
+      }
+    
+      .zone_no{
+        /* border : 1px solid red; */
+        width : 36.5%;
+        height : 80px;
+        margin-left: 66%;
+      }
+    
+      span{
+        color: red;
+        margin-left: 6%;
+      }
+    
+      .ownership{
+        /* border : 1px solid black; */
+        height : 30px;
+        width : 20%;
+        float : left;
+        margin-left: 3.6%;
+        margin-top: 20px;
+      }
+    
+      .ownership_ip{
+        /* border : 1px solid black; */
+        height : 30px;
+        width : 10%;
+        margin-left : -10%;
+        margin-top : -25px;
+      }
+    
+        
+        </style>
+        
+        
+        
+       
+        <div class="form_area">
+          <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+            <div style=" height : 20px; width : 100%; background-color: #678c96; color: #ffffff;">Enter Apartment Details</div>
+    
+            <div class="input_area">
+    
+            <div class="input_border">
+            <input type="text" name="propertylegalid" formControlName="property_legal_id" placeholder="Property Permit#" (keypress)="OnlyNumbersAllowed_Permit_no($event)">
+            <span *ngIf="property_legal_id && property_legal_id.invalid && property_legal_id.touched" style="margin-left: 2%;">This field is required</span>
+            <span *ngIf="blockaplhaError_permit_no">Value Should be a Number</span>
+          </div>
+    
+            <div class="input_border">
+            <input type="text" name="propertyname" formControlName="property_name" placeholder="Property Name">
+            <span *ngIf="property_name && property_name.invalid && property_name.touched" style="margin-left: 2%;">This field is required</span>
+          </div>
+    
+            <div class="input_border">
+            
+            <div class="property_address">
+              <div class="special_a">
+                <a for="">Property address</a>
+              </div>
+    
+              <div class="special_ip">
+                
+              <div class="building_no">
+              <input type="text" name="buildingno" formControlName="building_no" placeholder="Building#" (keypress)="OnlyNumbersAllowed_Builing_no($event)"><br>
+              <span *ngIf="building_no && building_no.invalid && building_no.touched">This field is required</span>
+              <span *ngIf="blockaplhaError_building_no">Value Should be a Number</span>
+            </div>
+            
+            <div class="street_no">
+              <input type="text" name="streetno" formControlName="street_no" placeholder=" Street#" (keypress)="OnlyNumbersAllowed_st_no($event)"><br>
+              <span *ngIf="street_no && street_no.invalid && street_no.touched">This field is required</span>
+              <span *ngIf="blockaplhaError_st_no">Value Should be a Number</span>
+            </div>
+            
+            <div class="zone_no">
+              <input type="text" name="zoneno" formControlName="zone_no" placeholder="Zone#" (keypress)="OnlyNumbersAllowed_zone($event)"><br>
+              <span *ngIf="zone_no && zone_no.invalid && zone_no.touched">This field is required</span>
+              <span *ngIf="blockaplhaError_zone">Value Should be a Number</span>
+            </div>
+            
+            </div>
+            </div>
+          </div>
+    
+            
+            <div class="input_border">
+              <div class="special_a"><a>Upload Blue Plate Image</a></div>
+              <div class="upload_ip"><input type="file" name="profile" (change)="onFileChanged($event)" style="width:93%"></div>
+          </div>
+    
+    
+          <div class="input_border">
+            <div class="special_a"><a>Ownership</a></div>
+            <div *ngFor = "let item of ownership">
+              <div class="ownership"><a>{{item.name}}</a>
+                <div class="ownership_ip"><input type="radio" value={{item.value}} name="ownership" id={{item.id}} formControlName ="ownership" (click)="getvalue(item.value)" ></div>
+            </div>
+            </div>
+          </div>
+    
+            <div class="input_border">
+              <div class="special_a"><a>Upload contract with first owner</a></div>
+              <div class="upload_ip"><input type="file" [disabled]="first_owner" id="contract" name="contract" (change)="onFileChanged2($event)" style="width:93%" ></div>
+    
+          </div>
+          </div>
+    
+          <div class="reg_btn">
+            <button type="submit" [disabled]="uploadForm.invalid || !flag">Upload Property</button>
+          </div>
+          </form>
+        </div>
+     
+        
+    

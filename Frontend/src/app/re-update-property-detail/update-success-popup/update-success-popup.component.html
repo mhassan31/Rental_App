@@ -1,0 +1,76 @@
+
+
+
+
+<style>
+
+    
+    
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 800%;
+      opacity: 0.9;
+      border-radius: 5px;
+    }
+    
+    button:hover {
+      opacity:1;
+    }
+    
+    
+    .cancelbtn {
+      
+      width: 20%;
+    }
+    
+    
+    .cancelbtn {
+      background-color: #ccc;
+      color: black;
+    }
+    
+    
+    .deletebtn {
+      background-color: #f44336;
+    }
+    
+    
+    .container {
+      padding: 12px;
+      text-align: center;
+    }
+    
+
+    
+    
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+
+    </style>
+    
+    
+
+
+    
+    
+      <div class="container">
+        
+        <h1>Update</h1>
+        <p><p>{{data.message}}</p>
+       
+        <div class="clearfix">
+          <button type="button" (click)="closepopup()" class="cancelbtn">Close</button>
+          
+        </div>
+      </div>
+    
+

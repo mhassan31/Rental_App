@@ -1,0 +1,431 @@
+<!-- <p>userprofile (Landlord) works!</p>
+<p>{{newsessData.id}}</p>
+<p>{{newsessData.FName}}</p>
+<p>{{newsessData.LName}}</p>
+<p>{{newsessData.Email}}</p>
+<p>{{newsessData.Pswrd}}</p>
+<p>{{newsessData.accounttype}}</p> -->
+
+<style>
+    /* ***********************************************Side Nav Bar********************************************* */
+
+    .side_nav_bar {
+        width: 12%;
+        height: 100vh;
+        background-color: #0a4f5f;
+        float: left;
+    }
+
+    .side_nav_bar label {
+        /* background-color: #ffffff; */
+        width: 100%;
+        color: white;
+    }
+
+    .side_nav_bar_img {
+        width: 100%;
+        height: 200px;
+        background-color: #0a4f5f;
+        border: 1px solid #0a4f5f;
+    }
+
+    .side_nav_bar_img img {
+        width: 60%;
+    height: 120px;
+     margin-top: 30px;
+    margin-left: 18%;
+    }
+
+    .side_nav_bar_content {
+        /* border : 1px solid black; */
+        height: calc(100vh - 200px);
+        width: 100%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 11.9%;
+        background-color: #0a4f5f;
+        position: absolute;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    li a.active {
+        background-color: white;
+        color: black;
+    }
+
+    li a:hover:not(.active) {
+        background-color: white;
+        color: black;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 80%;
+    }
+
+
+
+
+    /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+    /* ***********************************************Header CSS*********************************************** */
+
+    .header {
+        background-color: white;
+        /* border : 1px solid #074a76; */
+        height: 65px;
+        width: 88%;
+        float: right;
+        border-bottom: 1px solid #678c96;
+    }
+
+    .header a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+    }
+
+    .header-btn {
+        float: right;
+    }
+
+    .dropbtn {
+        background-color: #678c96;
+        color: white;
+        padding: 15px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-right: 6px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        width: 95%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #678c96;
+        width: 100%;
+        color: white;
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+    /* ***********************************************Header CSS End*********************************************** */
+
+    /* ***********************************************Center Content*************************************************** */
+
+    .center_content {
+        /* border : 1px solid black; */
+        height: calc(100vh - 80px - 65px);
+        width: 88%;
+        background-color: #f5f9fc;
+        float: right;
+    }
+
+    .center_content_frame {
+        border: 1px solid #ffffff;
+        background-color: #ffffff;
+        height: 775px;
+        width: 96%;
+        margin-top: 25px;
+        margin-left: 2%;
+        box-shadow: 2px 2px 4px 4px #eaf0f4;
+    }
+
+
+
+
+
+
+    .center_content_table_area{
+    /* border : 1px solid black; */
+    background-color: #f5f9fc;
+    height : calc(100vh - 100px - 65px - 40px - 30px);
+    width : 97.5%;
+    margin-left: 1.25%;
+    margin-top: 10px;
+  }
+
+  .search_separation_border {
+    /* border : 1px solid black; */
+    height : 30px;
+    width : 100%;
+    background-color: #3c3c3c;
+    color : white;
+  }
+
+  #search_separation_border_a{
+    color : white;
+    margin-left: 1.5%;
+    margin-top: 10px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .pagination{
+    /* border : 1px solid black; */
+    height : 40px;
+    width : 97.5%;
+    margin-left: 1.5%;
+  }
+
+
+
+    .property_status_frame {
+        border: 1px solid #678c96;
+        background-color: #f5f9fc;
+        height: 300px;
+        width: 20%;
+        margin-left: 2%;
+        margin-top: 25px;
+        float: left;
+        /* border-top : 10px solid #678c96; */
+    }
+
+    .property_status_frame_heading {
+        height: 25px;
+        width: 100%;
+        background-color: #678c96;
+        color: white;
+    }
+
+    /* .property_status_frame_heading a{
+      margin-left: 66%;
+    } */
+
+    .property_status_frame p {
+        font-size: 22px;
+        margin-top: 120px;
+        margin-left: 35%;
+    }
+
+    .tenant_detail {
+        border: 1px solid #678c96;
+        background-color: #f5f9fc;
+        height: 300px;
+        width: 74%;
+        float: right;
+        margin-top: 25px;
+        margin-right: 2%;
+    }
+
+    .tenant_detail_heading {
+        height: 25px;
+        width: 100%;
+        background-color: #678c96;
+        color: white;
+    }
+
+    .payment_frame {
+        border: 1px solid #678c96;
+        height: 350px;
+        width: 96%;
+        margin-top: 370px;
+        margin-left: 2%;
+    }
+
+    #payment_frame_heading {
+        background-color: #678c96;
+        color: white;
+
+    }
+
+    #payment_id_label{
+        margin-left: 1%;
+    }
+
+    #payment_id_input{
+        margin-left: 1%;
+        width : 20%;
+    }
+
+    #rent_label{
+        margin-left: 1%;
+    }
+
+    #rent_input{
+        margin-left: 1%;
+        width : 20%;
+    }
+
+
+
+
+    #month_label{
+        margin-left: 2%;
+    }
+
+    #month_input{
+        margin-left: 1%;
+        width : 10%;
+    }
+
+    #year_label{
+        margin-left: 2%;
+    }
+
+    #year_input{
+        margin-left: 1%;
+        width : 10%;
+    }
+
+    #pay_btn{
+        margin-left: 2%;
+    }
+
+
+
+
+    /* ***********************************************Center Content End*********************************************** */
+</style>
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="header">
+    <div class="header-btn">
+        <div class="dropdown">
+            <button class="dropbtn">{{newsessData.full_name}}</button>
+            <div class="dropdown-content">
+                <a routerLink="/tenant-profile-update">Profile</a>
+                <a (click)="signout()">Sign out</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="side_nav_bar">
+    <div class="side_nav_bar_img">
+        <img src="assets/pay2m_logo.JPG">
+    </div>
+
+
+
+
+    <div class="side_nav_bar_content">
+        
+        <ul>
+            <br>
+            <li><a routerLink="/tenantprofile"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+            <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+            <li><a routerLink="/tenant-my-property"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/Property_logo.jpg"> &nbsp; My Property</a></li>
+            <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        </ul>
+    </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="center_content">
+
+    <div class="search_separation_border "><a id="search_separation_border_a"> Main Properties Details</a></div>
+
+    <div class="center_content_table_area">
+        <table>
+          <tr>
+            <!-- <th> ID</th> -->
+            <th> Name</th>
+            <th> Permit No</th>
+            <th> Building No</th>
+            <th> Street No</th>
+            <th> Zone No</th>
+            <!-- <th> Image</th> -->
+            <th> Unit Name</th>
+            <th> Unit No.</th>
+            <th> Detail</th>
+
+          </tr>
+    
+          <tr *ngFor="let item of result1 | paginate: { itemsPerPage:4, currentPage:p}">
+            <!-- <td>{{item.main_property_id}}</td> -->
+            <td>{{item.main_property_name}}</td>
+            <td>{{item.main_property_legal_id}}</td>
+            <td>{{item.main_property_building_no}}</td>
+            <td>{{item.main_property_street_no}}</td>
+            <td>{{item.main_property_zone_no}}</td>
+            <td>{{item.sub_property_name}}</td>
+            <td>{{item.sub_property_legal_id}}</td>
+            <td><button (click)="respectiveData(item.sub_property_id)">Detail</button></td>
+
+          </tr>
+        </table>
+      </div>
+
+      <!-- <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div> -->
+
+
+
+
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

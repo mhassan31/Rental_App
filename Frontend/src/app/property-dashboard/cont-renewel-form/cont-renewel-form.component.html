@@ -1,0 +1,429 @@
+<style>
+    /* ***********************************************Side Nav Bar********************************************* */
+  
+    .side_nav_bar {
+      width: 12%;
+      height:175.2vh;
+      background-color: #0a4f5f;
+      float: left;
+    }
+  
+    .side_nav_bar label{
+      /* background-color: #ffffff; */
+      width: 100%;
+      color : white;
+    }
+  
+    .side_nav_bar_img {
+      width: 100%;
+      height: 200px;
+      background-color: #0a4f5f;
+      border: 1px solid #0a4f5f;
+    }
+  
+    .side_nav_bar_img img {
+      width: 60%;
+      height: 120px;
+       margin-top: 30px;
+      margin-left: 18%;
+    }
+  
+    .side_nav_bar_content {
+      /* border : 1px solid black; */
+      height: calc(150vh - 200px);
+      width: 100%;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 11.9%;
+      background-color: #0a4f5f;
+      position: absolute;
+    }
+  
+    li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+  
+    li a.active {
+      background-color: white;
+      color: black;
+    }
+  
+    li a:hover:not(.active) {
+      background-color: white;
+      color: black;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      width : 80%;
+    }
+  
+  
+  
+  
+    /* ***********************************************Side Nav Bar End***************************************** */
+  
+  
+  
+    /* ***********************************************Header CSS*********************************************** */
+  
+    .header {
+      background-color: white;
+      /* border : 1px solid #074a76; */
+      height: 65px;
+      width: 88%;
+      float: right;
+      border-bottom: 1px solid #074a76;
+    }
+  
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+  
+    .header-btn {
+      float: right;
+    }
+  
+    .dropbtn {
+      background-color: #678c96;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 6px;
+      margin-right: 6px;
+    }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 95%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      
+    }
+  
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #678c96;
+      width: 100%;
+      color: white;
+  
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+  
+    /* ***********************************************Header CSS End*********************************************** */
+  
+    /* ***********************************************Center Content*************************************************** */
+  
+    .center_content {
+      /* border : 1px solid black; */
+      height: calc(160vh - 80px - 65px);
+      width: 88%;
+      background-color: #f5f9fc;
+      float: right;
+    }
+  
+    .form_area{
+    /* border : 1px solid black; */
+    background-color: #f5f9fc;
+    height: 700px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 25px;
+    box-shadow: 0px 4px 4px 0px;
+    border-top: 20px solid #678c96;
+  }
+  
+  
+    form input {
+    width: 96%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 2%;
+    }
+  
+    form a{
+    font-size: 14px;
+    margin-left: 2%;
+    color : #678c96;
+    /* background-color: #45748e; */
+  }
+  
+    form button:enabled {
+      background-color: #678c96;
+      color: white;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      margin-left: 89.5%;
+      cursor: pointer;
+    }
+  
+    form button:disabled {
+      background-color: #678c96;
+      color: white;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      margin-left: 89.5%;
+      opacity: 0.5;
+    }
+  
+    form button:hover:enabled{
+      background-color: #0a4f5f;
+    }
+  
+    form button:active:enabled{
+      background-color :#0a4f5f;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+    }
+  
+  
+  .input_area{
+      border: 1px solid black;
+      height: 380px;
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .input_border {
+      /* border: 1px solid black; */
+      height: 80px;
+      width: 100%;
+      
+    }
+  
+    .special_a{
+      /* border: 1px solid black; */
+      width : 14%;
+      height : 80px;
+      float : left;
+      padding: 20px 48px;
+    }
+  
+    .special_ip{
+      /* border: 1px solid blue; */
+      width : 86%;
+      height : 80px;
+      margin-left: 14%;
+  
+    }
+  
+    .upload_ip{
+      /* border: 1px solid blue; */
+      width : 86%;
+      height : 80px;
+      margin-left: 14%;
+    
+    }
+  
+    /* .ip_span{
+      border: 1px solid blue;
+      width : 86%;
+      height : 20px;
+    } */
+  
+    .building_no{
+      /* border : 1px solid red; */
+      width : 33%;
+      height : 80px;
+      float : left;
+    }
+  
+    .street_no{
+      /* border : 1px solid red; */
+      width : 33%;
+      height : 80px;
+      float:left;
+      
+    }
+  
+    .zone_no{
+      /* border : 1px solid red; */
+      width : 34%;
+      height : 80px;
+      margin-left: 66%;
+    }
+  
+    span{
+      color: red;
+      margin-left: 6%;
+    }
+  
+    .property_address input {
+  
+  width: 86.2%;
+  margin-left: 7%;
+  
+  }
+  
+  .reg_btn{
+      /* border: 1px solid black; */
+      height: 70px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 8px;
+    }
+  
+  
+  
+  
+    /* ***********************************************Center Content End*********************************************** */
+  </style>
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="header">
+    <div class="header-btn">
+      <div class="dropdown">
+        <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+        <div class="dropdown-content">
+          <a routerLink="/re-profile-setting">Profile</a>
+          <a (click)="signout()">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="side_nav_bar">
+    <div class="side_nav_bar_img">
+      <img src="assets/pay2m_logo.JPG">
+    </div>
+    
+  
+   
+    
+    <div class="side_nav_bar_content">
+  
+      <ul>
+        <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="center_content">
+  
+    <div class="form_area">
+      <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+  
+        <div class="input_area">
+  
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>Contract Reference#</a></div>
+        <div class="special_ip"><input type="text" name="contractreference" formControlName = "contract_reference">
+          <!-- <span *ngIf="contract_reference && contract_reference.invalid && contract_reference.touched" style="margin-left: 2%;">This field is required</span> -->
+        </div>
+        
+      </div>
+
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>Renewel No#</a></div>
+        <div class="special_ip"><input type="number" name="renewel_no" formControlName = "Renewel_No">
+          <!-- <span *ngIf="contract_reference && contract_reference.invalid && contract_reference.touched" style="margin-left: 2%;">This field is required</span> -->
+        </div>
+        
+      </div>
+
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>Revised Rent</a></div>
+        <div class="special_ip"><input type="number" name="new_rent" formControlName = "New_Rent">
+          
+          <!-- <span *ngIf="contract_reference && contract_reference.invalid && contract_reference.touched" style="margin-left: 2%;">This field is required</span> -->
+        
+        </div>
+        
+      </div>
+  
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>Start Date</a></div>
+        <div class="special_ip"><input type="date" name="startdate" formControlName = "start_date">
+          <!-- <span *ngIf="start_date && start_date.invalid && start_date.touched" style="margin-left: 2%;">This field is required</span> -->
+        </div>
+        
+      </div>
+  
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>End Date</a></div>
+        <div class="special_ip"><input type="date" name="enddate" formControlName = "end_date">
+          <!-- <span *ngIf="end_date && end_date.invalid && end_date.touched" style="margin-left: 2%;">This field is required</span> -->
+        </div>
+      </div>
+  
+      <div class="input_border">
+        <div class="special_a" style="margin-left:0% ;"><a>Contract Upload</a></div>
+        <div class="upload_ip"><input type="file" name="contract" (change)="onFileChanged($event)"></div>
+      </div>
+  
+      </div>
+  
+      <div class="reg_btn">
+  
+        <button type = "submit" [disabled]="uploadForm.invalid">Upload Property</button>
+  
+      </div>
+      </form>
+  
+  </div>
+  
+  
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  

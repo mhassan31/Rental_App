@@ -1,0 +1,30 @@
+[
+    {
+        "id" : 1,
+        "FName" : "Muhammad",
+        "LName" : "Hassan",
+        "Email" : "engr.mhassan31@gmail.com",
+        "Pswrd" : "abc@123"
+    },
+    {
+        "id" : 2,
+        "FName" : "rabbiya",
+        "LName" : "Hassan",
+        "Email" : "khan.biyaaaa@gmail.com",
+        "Pswrd" : "rabbiya123"
+    },
+    {
+        "id" : 3,
+        "FName" : "Muhammad",
+        "LName" : "Yasir",
+        "Email" : "Yasir@gmail.com",
+        "Pswrd" : "yasir123"
+    },
+    {
+        "id" : 4,
+        "FName" : "Muhammad",
+        "LName" : "Dawood",
+        "Email" : "Dawood@gmail.com",
+        "Pswrd" : "Dawood123"
+    }
+]

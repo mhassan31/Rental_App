@@ -1,0 +1,137 @@
+<style>
+
+body {
+    background-image: url('assets/pay2m_bg_img.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(100vh);
+  }
+
+  .header {
+    border: 1px solid #0a4f5f;
+    height: 143px;
+    width: 100%;
+    background-color: #0a4f5f;
+  }
+
+  #header_img {
+    height: 140px;
+    width: 8%;
+  }
+
+  .content{
+    /* border : 1px solid black; */
+    height : calc(100vh - 143px - 80px - 122px);
+    width : 100%;
+  }
+
+  .content_position{
+  /* border : 1px solid black; */
+  height : 300px;
+  width : 40%;
+  margin-top: 200px;
+  margin-left: 30%;
+}
+
+#real_estate_btn{
+  border : 1px solid #0a4f5f;
+  background-color: #0a4f5f;
+  color: white;
+  margin-top: 121.5px;
+  height: 40px;
+  width : 20%;
+  border-radius: 5px;
+  margin-left: 10%;
+  float: left;
+}
+
+/* #landlord_btn{
+  border : 1px solid #0a4f5f;
+  background-color: #0a4f5f;
+  color: white;
+  margin-top: 121.5px;
+  height: 40px;
+  width : 20%;
+  border-radius: 5px;
+  margin-left: 10%;
+} */
+
+#tenant_id{
+  border : 1px solid #0a4f5f;
+  background-color: #0a4f5f;
+  color: white;
+  margin-top: 121.5px;
+  height: 40px;
+  width : 20%;
+  border-radius: 5px;
+  margin-left: 10%;
+}
+
+.button{
+  border: 1px solid #0a4f5f;
+    background-color: #0a4f5f;
+    color: white;
+    margin-top: 121.5px;
+    height: 40px;
+    width: 25%;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+.button:hover{
+  background-color: #678c96;
+}
+
+.button:active{
+
+  background-color: #678c96;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+
+}
+
+.footer-left{
+    border : 1px solid black;
+    background-color: #678c96;
+    height : 80px;
+    width : 12%;
+    margin-top: 2px;
+  }
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+  
+
+
+  <div class="header">
+
+    <img id="header_img" src="assets/pay2m_logo.JPG">
+
+
+
+  </div>
+
+
+<div class="content">
+
+  <div class="content_position">
+    <button id="real_estate_btn" routerLink="/reg-form-real-estate" class="button">Real Estate</button>
+    <!-- <button id="landlord_btn" routerLink="/reg-form-landlord" class="button">Landlord</button> -->
+    <button id="tenant_id" routerLink="/reg-form-tenant" class="button">Tenant</button>
+  </div>
+
+</div>
+
+<div class="footer-left">  
+  <!-- footer left block -->
+</div>
+
+</body>

@@ -1,0 +1,507 @@
+<style>
+  /* ***********************************************Side Nav Bar********************************************* */
+
+  .side_nav_bar {
+    width: 12%;
+    height: 120vh;
+    background-color: #0a4f5f;
+    float: left;
+  }
+
+  .side_nav_bar label {
+    /* background-color: #ffffff; */
+    width: 100%;
+    color: white;
+  }
+
+  .side_nav_bar_img {
+    width: 100%;
+    height: 200px;
+    background-color: #0a4f5f;
+    border: 1px solid #0a4f5f;
+  }
+
+  .side_nav_bar_img img {
+    width: 60%;
+    height: 120px;
+     margin-top: 30px;
+    margin-left: 18%;
+  }
+
+  .side_nav_bar_content {
+    /* border : 1px solid black; */
+    height: calc(120vh - 200px);
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11.9%;
+    background-color: #0a4f5f;
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  li a.active {
+    background-color: white;
+    color: black;
+  }
+
+  li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+  }
+
+
+
+
+  /* ***********************************************Side Nav Bar End***************************************** */
+
+
+
+  /* ***********************************************Header CSS*********************************************** */
+
+  .header {
+    background-color: white;
+    /* border : 1px solid #074a76; */
+    height: 65px;
+    width: 88%;
+    float: right;
+    border-bottom: 1px solid #074a76;
+  }
+
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header-btn {
+    float: right;
+  }
+
+  .dropbtn {
+    background-color: #678c96;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 95%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #678c96;
+    width: 100%;
+    color: white;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* ***********************************************Header CSS End*********************************************** */
+
+  /* ***********************************************Center Content*************************************************** */
+
+  .center_content {
+    /* border : 1px solid black; */
+    height: calc(120vh - 80px - 65px);
+    width: 88%;
+    background-color: #f5f9fc;
+    float: right;
+  }
+
+  .form_outside_area {
+    border: 1px solid rgb(253, 253, 253);
+    background-color: white;
+    height: 860px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 35px;
+    /* border-top: 2px solid #678c96; */
+
+  }
+
+  .form_area {
+    border: 1px solid #678c96;
+    background-color: #f5f9fc;
+    height: 350px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 35px;
+    /* box-shadow: 0px 4px 4px 0px; */
+    border-radius: 3px;
+  }
+
+  form input {
+    width: 96%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 2%;
+  }
+
+  form a {
+    font-size: 14px;
+    margin-left: 2%;
+    color: #678c96;
+    /* background-color: #45748e; */
+  }
+
+  form button:enabled {
+    background-color: #678c96;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 89%;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  form button:disabled {
+    background-color: #678c96;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 89%;
+    margin-top: 10px;
+    opacity: 0.5;
+  }
+
+  form button:hover:enabled {
+    background-color: #45748e;
+  }
+
+  form button:active:enabled {
+    background-color: #45748e;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+
+  .property_address input {
+
+    width: 22.6%;
+
+  }
+
+
+  .input_border {
+    /* border: 1px solid black; */
+    height: 80px;
+    width: 100%;
+
+  }
+
+  .input_area {
+    /* border: 1px solid black; */
+    height: 240px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .special_a {
+    /* border: 1px solid black; */
+    width: 14%;
+    height: 80px;
+    float: left;
+    padding: 20px 48px;
+  }
+
+  .special_ip {
+    /* border: 1px solid blue; */
+    width: 86%;
+    height: 80px;
+    margin-left: 14%;
+
+  }
+
+  .upload_ip {
+    /* border: 1px solid blue; */
+    width: 86%;
+    height: 80px;
+    margin-left: 14%;
+
+  }
+
+  /* .ip_span{
+    border: 1px solid blue;
+    width : 86%;
+    height : 20px;
+  } */
+
+  .building_no {
+    /* border : 1px solid red; */
+    width: 33%;
+    height: 80px;
+    float: left;
+  }
+
+  .street_no {
+    /* border : 1px solid red; */
+    width: 33%;
+    height: 80px;
+    float: left;
+
+  }
+
+  .zone_no {
+    /* border : 1px solid red; */
+    width: 34%;
+    height: 80px;
+    margin-left: 66%;
+  }
+
+  span {
+    color: red;
+    margin-left: 6%;
+  }
+
+  .reg_btn {
+    /* border: 1px solid black; */
+    height: 70px;
+    width: 100%;
+    
+  }
+
+  .property_address input {
+
+    width: 86.2%;
+    margin-left: 7%;
+
+  }
+
+
+
+
+
+
+  /* ***********************************************Center Content End*********************************************** */
+</style>
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="header">
+  <div class="header-btn">
+    <div class="dropdown">
+      <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+      <div class="dropdown-content">
+        <a routerLink="/re-profile-setting">Profile</a>
+        <a (click)="signout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="side_nav_bar">
+  <div class="side_nav_bar_img">
+    <img src="assets/pay2m_logo.JPG">
+  </div>
+
+
+
+
+  <div class="side_nav_bar_content">
+    <!-- <label>Menu</label>
+    <div style="height: 1px; width : 100%; background-color: #ffffff;"></div> -->
+    <ul>
+      <br>
+      <li><a routerLink="/userprofile"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/dashboard_4.jpg"> &nbsp; Dashboard</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/property-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/Property_logo.jpg"> &nbsp; Properties</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      <li><a routerLink="/re-tenant-details"><img style="height : 25px; width : 15%; border-radius: 2px;" src="assets/tenant_logo.jpg"> &nbsp; Tenants</a></li>
+      <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+    </ul>
+  </div>
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<div class="center_content">
+
+
+  <div class="form_outside_area">
+
+    <div class="form_area">
+      <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+        <div style=" height : 20px; width : 100%; background-color: #678c96;"></div>
+
+        <div class="input_area">
+          <!-- <a for="">Real Estate ID</a>
+            <input type="text" name="landlordid" formControlName="landlord_id" readonly>
+    
+            <a for="">Real Estate Name</a>
+            <input type="text" name="landlordid" formControlName="real_estate_name" readonly> -->
+
+          <!-- <a for="">Property ID</a>
+            <input type="text" name="propertylegalid" formControlName="property_id" readonly> -->
+
+          <!-- <a for="">Property Permit No</a> -->
+          <!-- <input type="text" name="propertylegalid" formControlName="property_legal_id" placeholder="Property Permit"> -->
+
+          <div class="input_border">
+            <input type="text" name="propertylegalid" formControlName="property_legal_id" placeholder="Property Permit#"
+              (keypress)="OnlyNumbersAllowed_Permit_no($event)">
+            <span *ngIf="property_legal_id && property_legal_id.invalid && property_legal_id.touched"
+              style="margin-left: 2%;">This field is required</span>
+            <span *ngIf="blockaplhaError_permit_no">Value Should be a Number</span>
+          </div>
+
+
+
+          <div class="input_border">
+            <input type="text" name="propertyname" formControlName="property_name" placeholder="Property Name">
+            <span *ngIf="property_name && property_name.invalid && property_name.touched" style="margin-left: 2%;">This
+              field is required</span>
+          </div>
+
+
+
+          <div class="input_border">
+
+            <div class="property_address">
+
+              <div class="special_a">
+                <a for="">Property address</a>
+              </div>
+
+              <div class="special_ip">
+
+                <div class="building_no">
+                  <input type="text" name="buildingno" formControlName="building_no" placeholder="Building#"
+                    (keypress)="OnlyNumbersAllowed_Builing_no($event)"><br>
+                  <span *ngIf="building_no && building_no.invalid && building_no.touched">This field is required</span>
+                  <span *ngIf="blockaplhaError_building_no">Value Should be a Number</span>
+                </div>
+
+                <div class="street_no">
+                  <input type="text" name="streetno" formControlName="street_no" placeholder=" Street#"
+                    (keypress)="OnlyNumbersAllowed_st_no($event)"><br>
+                  <span *ngIf="street_no && street_no.invalid && street_no.touched">This field is required</span>
+                  <span *ngIf="blockaplhaError_st_no">Value Should be a Number</span>
+                </div>
+
+                <div class="zone_no">
+                  <input type="text" name="zoneno" formControlName="zone_no" placeholder="Zone#"
+                    (keypress)="OnlyNumbersAllowed_zone($event)"><br>
+                  <span *ngIf="zone_no && zone_no.invalid && zone_no.touched">This field is required</span>
+                  <span *ngIf="blockaplhaError_zone">Value Should be a Number</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="input_border">
+            <div class="special_a" style="margin-left:0% ;"><a>Upload Image</a></div>
+            <div class="upload_ip"><input type="file" name="profile" (change)="onFileChanged($event)"
+                style="width:95.6%"></div>
+          </div> -->
+
+          <!-- <div class="input_border">
+            <div class="special_a"><a>Upload Contract</a></div>
+            <div class="upload_ip"><input type="file" name="contract" (change)="onFileChanged2($event)" style="width:95.6%"></div>
+          </div> -->
+
+        </div>
+
+        <div class="reg_btn">
+          <button type="submit" [disabled]="uploadForm.invalid">Save Change</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form_area" style="height: 185px;">
+    <form [formGroup]="uploadForm_Img" (ngSubmit)="Upload_Img()">
+      <div style=" height : 20px; width : 100%; background-color: #678c96;"></div>
+      <div class="input_border" style="margin-top: 15px;">
+        <div class="special_a" style="margin-left:0% ;"><a>Upload Image</a></div>
+        <div class="upload_ip"><input type="file" name="profile" (change)="onFileChanged($event)" style="width:95.6%">
+        </div>
+      </div>
+      <div class="reg_btn">
+      <button type="submit" [disabled]="uploadForm_Img.invalid">Save Change</button>
+    </div>
+    </form>
+  </div>
+  <div class="form_area" style="height: 185px;">
+    <form [formGroup]="uploadForm_Contract" (ngSubmit)="Upload_Contract()">
+      <div style=" height : 20px; width : 100%; background-color: #678c96;"></div>
+      <div class="input_border" style="margin-top: 15px;">
+        <div class="special_a" style="margin-left:0% ;"><a>Upload Contract</a></div>
+        <div class="upload_ip"><input type="file" name="contract" (change)="onFileChanged2($event)" style="width:95.6%"></div>
+      </div>
+      <div class="reg_btn">
+      <button type="submit" [disabled]="uploadForm_Contract.invalid">Save Change</button>
+    </div>
+    </form>
+  </div>
+
+  </div>
+
+
+
+</div>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

@@ -1,0 +1,1859 @@
+"use strict";
+(self["webpackChunkangular_app"] = self["webpackChunkangular_app"] || []).push([["main"],{
+
+/***/ 6698:
+/*!******************************************!*\
+  !*** ./src/app/about/about.component.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AboutComponent": () => (/* binding */ AboutComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class AboutComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+AboutComponent.ɵfac = function AboutComponent_Factory(t) { return new (t || AboutComponent)(); };
+AboutComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AboutComponent, selectors: [["app-about"]], decls: 1, vars: 0, consts: [[1, "content"]], template: function AboutComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 0);
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhYm91dC5jb21wb25lbnQuY3NzIn0= */", ".content[_ngcontent-%COMP%] {\n  display: flex;\n  margin: 82px auto 32px;\n  padding: 0 16px;\n  max-width: 960px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.bgcolor[_ngcontent-%COMP%]{\n  background-color:#233444;\n}"] });
+
+
+/***/ }),
+
+/***/ 1491:
+/*!********************************!*\
+  !*** ./src/app/api.service.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ApiService": () => (/* binding */ ApiService)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 8784);
+
+
+class ApiService {
+    constructor(_http) {
+        this._http = _http;
+        //PHP_API_SERVER : string = "assets/file/userdata.json";
+        //PHP_API_SERVER : string = "https://jsonplaceholder.typicode.com/todos";
+        this.PHP_API_SERVER = "http://localhost:8080/angular_app_Rental/php/";
+    }
+    // getData() : Observable<User[]> {
+    //   return this._http.get<User[]>(this.PHP_API_SERVER + '/loginhelptest.php');
+    // }  
+    //API GET/POST that is using during signup////////////////////////////////////////////////////////////////////////
+    getData() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Data_LandlordDB.php');
+    }
+    gettenantData() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Data_TenantDB.php');
+    }
+    // getData(){
+    //   return this._http.get(this.PHP_API_SERVER + "loginhelp.php");
+    // } 
+    //   postData(newUser :User) : Observable<User[]> {
+    //     return this._http.post<User[]>(this.PHP_API_SERVER + '/signuphelp.php', newUser);
+    // }
+    postData(newUser) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_LandlordDB.php', newUser);
+    }
+    posttenantData(newUser) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_TenantDB.php', newUser);
+    }
+    //API GET/POST that is using during signup End/////////////////////////////////////////////////////////////////////////
+    // loginData(newUser :User) : Observable<User[]> {
+    //   return this._http.post<User[]>(this.PHP_API_SERVER + '/loginhelp.php', newUser);
+    // }
+    loginData(newUser) {
+        return this._http.post(this.PHP_API_SERVER + '/API_GET_Login_DATA_LandlordDB.php', newUser);
+    }
+    logintenantData(newUser) {
+        return this._http.post(this.PHP_API_SERVER + '/API_GET_Login_Data_TenantDB.php', newUser);
+    }
+    postpropertyData(newProperty) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Upload_Property_Data_test.php', newProperty);
+    }
+    getpropertyData() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Property_Data.php');
+    }
+    getpropertyDetail(id) {
+        return this._http.post(this.PHP_API_SERVER + '/API_GET_Property_Detail.php', id);
+    }
+    get_real_estate_db_Data() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Real_Estate_Reg_Data.php');
+    }
+    check_realestate_db_Data(NewMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Real_Estate_DB.php', NewMember);
+    } //
+    get_local_landlord_db_Data() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Local_Landlord_Reg_DB_Data.php');
+    }
+    check_local_landlord_db_Data(NewMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Landlord_DB.php', NewMember);
+    } //
+    get_tenant_db_Data() {
+        return this._http.get(this.PHP_API_SERVER + '/API_GET_Data_TenantDB.php');
+    }
+    check_data_tenant_db_Data(NewMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Tenant_DB.php', NewMember);
+    } //
+    post_real_estate_member_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_Real_Estate_DB.php', newMember);
+    }
+    check_landlord_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Landlord_DB.php', newMember);
+    }
+    check_real_estate_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Real_Estate_DB.php', newMember);
+    }
+    check_tenant_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_POST_Data_Tenant_DB.php', newMember);
+    }
+    post_landlord_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_Landlord_DB(new).php', newMember);
+    }
+    check_post_tenant_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_DB_Data_For_Tenant.php', newMember);
+    }
+    check_post_real_estate_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_RE_DB_Data_For_Tenant.php', newMember);
+    }
+    check_post_landlord_db_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_Check_Data_Landlord_DB_For_Tenant.php', newMember);
+    }
+    post_tenant_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_Tenant_DB(new).php', newMember);
+    }
+    post_real_estate_Data(newMember) {
+        return this._http.post(this.PHP_API_SERVER + '/API_POST_Data_Real_Estate_DB.php', newMember);
+    }
+}
+ApiService.ɵfac = function ApiService_Factory(t) { return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
+ApiService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ApiService, factory: ApiService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
+/***/ 158:
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule),
+/* harmony export */   "routingComponents": () => (/* binding */ routingComponents)
+/* harmony export */ });
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./userlogin/userlogin.component */ 7559);
+/* harmony import */ var _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userprofile/userprofile.component */ 8536);
+/* harmony import */ var _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./usersignup/usersignup.component */ 7160);
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ 5067);
+/* harmony import */ var _mission_mission_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mission/mission.component */ 8553);
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about/about.component */ 6698);
+/* harmony import */ var _why_why_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./why/why.component */ 5382);
+/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./contact/contact.component */ 1563);
+/* harmony import */ var _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./microsoft/microsoft.component */ 8410);
+/* harmony import */ var _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tenantprofile/tenantprofile.component */ 1102);
+/* harmony import */ var _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./property-details/property-details.component */ 942);
+/* harmony import */ var _property_upload_property_upload_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./property-upload/property-upload.component */ 1790);
+/* harmony import */ var _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./registeration-form/registeration-form.component */ 5816);
+/* harmony import */ var _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./select-account-type/select-account-type.component */ 4942);
+/* harmony import */ var _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./reg-form-real-estate/reg-form-real-estate.component */ 1255);
+/* harmony import */ var _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./reg-form-landlord/reg-form-landlord.component */ 986);
+/* harmony import */ var _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reg-form-tenant/reg-form-tenant.component */ 7926);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+
+
+
+
+
+
+//import { AwsComponent } from './aws/aws.component';
+//import { CiscoComponent } from './cisco/cisco.component';
+//import { ComptiaComponent } from './comptia/comptia.component';
+//import { IscsComponent } from './iscs/iscs.component';
+
+
+
+
+
+
+
+
+
+
+const routes = [
+    { path: 'userlogin', component: _userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_0__.UserloginComponent },
+    { path: 'usersignup', component: _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_2__.UsersignupComponent },
+    { path: 'userprofile', component: _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_1__.UserprofileComponent },
+    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__.HomeComponent },
+    { path: 'mission', component: _mission_mission_component__WEBPACK_IMPORTED_MODULE_4__.MissionComponent },
+    { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_5__.AboutComponent },
+    { path: 'why', component: _why_why_component__WEBPACK_IMPORTED_MODULE_6__.WhyComponent },
+    { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_7__.ContactComponent },
+    { path: 'microsoft', component: _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_8__.MicrosoftComponent },
+    // {path : 'aws', component : AwsComponent},
+    //{path : 'cisco', component : CiscoComponent},
+    //{path : 'comptia', component : ComptiaComponent},
+    //{path : 'iscs', component : IscsComponent},
+    { path: 'tenantprofile', component: _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_9__.TenantprofileComponent },
+    { path: 'property-details', component: _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_10__.PropertyDetailsComponent },
+    { path: 'property-upload', component: _property_upload_property_upload_component__WEBPACK_IMPORTED_MODULE_11__.PropertyUploadComponent },
+    { path: 'registeration-form', component: _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_12__.RegisterationFormComponent },
+    { path: 'select-account-type', component: _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_13__.SelectAccountTypeComponent },
+    { path: 'reg-form-real-estate', component: _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_14__.RegFormRealEstateComponent },
+    { path: 'reg-form-landlord', component: _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_15__.RegFormLandlordComponent },
+    { path: 'reg-form-tenant', component: _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_16__.RegFormTenantComponent }
+];
+class AppRoutingModule {
+}
+AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
+AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule.forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule] }); })();
+const routingComponents = [_userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_0__.UserloginComponent, _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_2__.UsersignupComponent, _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_1__.UserprofileComponent, _home_home_component__WEBPACK_IMPORTED_MODULE_3__.HomeComponent, _mission_mission_component__WEBPACK_IMPORTED_MODULE_4__.MissionComponent,
+    _about_about_component__WEBPACK_IMPORTED_MODULE_5__.AboutComponent, _why_why_component__WEBPACK_IMPORTED_MODULE_6__.WhyComponent, _contact_contact_component__WEBPACK_IMPORTED_MODULE_7__.ContactComponent, _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_8__.MicrosoftComponent, _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_10__.PropertyDetailsComponent, _property_upload_property_upload_component__WEBPACK_IMPORTED_MODULE_11__.PropertyUploadComponent,
+    _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_12__.RegisterationFormComponent, _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_9__.TenantprofileComponent, _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_13__.SelectAccountTypeComponent, _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_14__.RegFormRealEstateComponent, _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_15__.RegFormLandlordComponent,
+    _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_16__.RegFormTenantComponent];
+
+
+/***/ }),
+
+/***/ 5041:
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 2816);
+
+
+class AppComponent {
+    constructor(router) {
+        this.router = router;
+        this.title = 'angular_app';
+        this.logoimagepath = "assets/Logo.jpg";
+    }
+    ngOnInit() {
+        //this.router.navigate(['/', 'home']);
+    }
+}
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.Router)); };
+AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 18, vars: 0, consts: [[1, "header"], ["src", "assets/p2ma.jpg", "height", "100", "width", "100"], [1, "header-ri8"], [1, "main"], [1, "footer-basic"], [1, "social"], ["href", "#"], [1, "icon", "ion-social-instagram"], [1, "icon", "ion-social-snapchat"], [1, "icon", "ion-social-twitter"], [1, "icon", "ion-social-facebook"], [1, "copyright"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 1)(2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4)(6, "footer")(7, "div", 5)(8, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "i", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "i", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "i", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "i", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "p", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "PAY2M Power by Twyla Technology");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterOutlet], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */", ".header[_ngcontent-%COMP%] {\n   background-color: #0a4f5f;\n  padding: 10px ;\n}\n\n.header[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  float: left;\n  color: black;\n  text-align: center;\n  padding: 12px;\n  text-decoration: none;\n  font-size: 18px; \n  line-height: 25px;\n  border-radius: 4px;\n}\n\n .header-ri8[_ngcontent-%COMP%] {\n  float: right;\n } \n\n\n\n\n\n.dropbtn[_ngcontent-%COMP%] {\n  background-color: #8e959f;\n  color: white;\n  padding: 16px;\n  font-size: 16px;\n  border: none;\n}\n\n.dropdown[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-content[_ngcontent-%COMP%] {\n  display: none;\n  position: absolute;\n  background-color: #0a4f5f;\n  min-width: 10px;\n  \n  z-index: 1;\n}\n\n.dropdown-content[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: white;\n  padding: 12px;\n  text-decoration: none;\n  display: block;\n}\n\n.dropdown-content[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {background-color: #0a4f5f;}\n\n.dropdown[_ngcontent-%COMP%]:hover   .dropdown-content[_ngcontent-%COMP%] {display: block;}\n\n.dropdown[_ngcontent-%COMP%]:hover   .dropbtn[_ngcontent-%COMP%] {background-color:#0a4f5f;}\n\n\n\n \n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n.main[_ngcontent-%COMP%]{\n\n  min-height: Calc(100vh - 120px - 190px);\n\n}\n\n\n\n\n\n\n\n\n\n\n\n\n.footer-basic[_ngcontent-%COMP%] {\n  padding:20px 0;\n  background-color:#0a4f5f;\n  color: white;\n}\n\n.footer-basic[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n  padding:0;\n  list-style:none;\n  text-align:center;\n  font-size:18px;\n  line-height:1.6;\n  margin-bottom:0;\n}\n\n.footer-basic[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  padding:0 10px;\n}\n\n.footer-basic[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color:inherit;\n  text-decoration:none;\n  opacity:0.8;\n}\n\n.footer-basic[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  opacity:1;\n}\n\n.footer-basic[_ngcontent-%COMP%]   .social[_ngcontent-%COMP%] {\n  text-align: center;\n  padding-bottom:15px;\n}\n\n.footer-basic[_ngcontent-%COMP%]   .social[_ngcontent-%COMP%]    > a[_ngcontent-%COMP%] {\n  font-size:24px;\n  width:40px;\n  height:40px;\n  line-height:40px;\n  display:inline-block;\n  text-align:center;\n  border-radius:50%;\n  border:1px solid #ccc;\n  margin:0 8px;\n  color:inherit;\n  opacity:0.75;\n}\n\n.footer-basic[_ngcontent-%COMP%]   .social[_ngcontent-%COMP%]    > a[_ngcontent-%COMP%]:hover {\n  opacity:10;\n}\n\n.footer-basic[_ngcontent-%COMP%]   .copyright[_ngcontent-%COMP%] {\n  margin-top:0px;\n  text-align:center;\n  font-size:20px;\n  color : white;\n  margin-bottom:0;\n}"] });
+
+
+/***/ }),
+
+/***/ 6747:
+/*!*******************************!*\
+  !*** ./src/app/app.module.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AppModule": () => (/* binding */ AppModule)
+/* harmony export */ });
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/platform-browser */ 318);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 158);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common/http */ 8784);
+/* harmony import */ var _datahandler_datahandler_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./datahandler/datahandler.component */ 4158);
+/* harmony import */ var _userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./userlogin/userlogin.component */ 7559);
+/* harmony import */ var _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./usersignup/usersignup.component */ 7160);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/forms */ 587);
+/* harmony import */ var _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./userprofile/userprofile.component */ 8536);
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.component */ 5067);
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./about/about.component */ 6698);
+/* harmony import */ var _mission_mission_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./mission/mission.component */ 8553);
+/* harmony import */ var _why_why_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./why/why.component */ 5382);
+/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./contact/contact.component */ 1563);
+/* harmony import */ var _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./microsoft/microsoft.component */ 8410);
+/* harmony import */ var _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tenantprofile/tenantprofile.component */ 1102);
+/* harmony import */ var _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./property-details/property-details.component */ 942);
+/* harmony import */ var _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./registeration-form/registeration-form.component */ 5816);
+/* harmony import */ var _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./select-account-type/select-account-type.component */ 4942);
+/* harmony import */ var _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reg-form-real-estate/reg-form-real-estate.component */ 1255);
+/* harmony import */ var _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reg-form-landlord/reg-form-landlord.component */ 986);
+/* harmony import */ var _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reg-form-tenant/reg-form-tenant.component */ 7926);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _property_upload_property_upload_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./property-upload/property-upload.component */ 1790);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//import { AwsComponent } from './aws/aws.component';
+//import { CiscoComponent } from './cisco/cisco.component';
+//import { ComptiaComponent } from './comptia/comptia.component';
+//import { IscsComponent } from './iscs/iscs.component';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { PropertyUploadComponent } from './property-upload/property-upload.component';
+class AppModule {
+}
+AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
+AppModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent] });
+AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵdefineInjector"]({ providers: [], imports: [[
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__.BrowserModule,
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_22__.HttpClientModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormsModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_23__.ReactiveFormsModule
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_3__.UserloginComponent, _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_4__.UsersignupComponent, _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_5__.UserprofileComponent, _home_home_component__WEBPACK_IMPORTED_MODULE_6__.HomeComponent, _mission_mission_component__WEBPACK_IMPORTED_MODULE_8__.MissionComponent, _about_about_component__WEBPACK_IMPORTED_MODULE_7__.AboutComponent, _why_why_component__WEBPACK_IMPORTED_MODULE_9__.WhyComponent, _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__.ContactComponent, _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_11__.MicrosoftComponent, _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_13__.PropertyDetailsComponent, _property_upload_property_upload_component__WEBPACK_IMPORTED_MODULE_19__.PropertyUploadComponent, _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_14__.RegisterationFormComponent, _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_12__.TenantprofileComponent, _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_15__.SelectAccountTypeComponent, _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_16__.RegFormRealEstateComponent, _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_17__.RegFormLandlordComponent, _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_18__.RegFormTenantComponent, _datahandler_datahandler_component__WEBPACK_IMPORTED_MODULE_2__.DatahandlerComponent,
+        _userlogin_userlogin_component__WEBPACK_IMPORTED_MODULE_3__.UserloginComponent,
+        _usersignup_usersignup_component__WEBPACK_IMPORTED_MODULE_4__.UsersignupComponent,
+        _userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_5__.UserprofileComponent,
+        _home_home_component__WEBPACK_IMPORTED_MODULE_6__.HomeComponent,
+        _about_about_component__WEBPACK_IMPORTED_MODULE_7__.AboutComponent,
+        _mission_mission_component__WEBPACK_IMPORTED_MODULE_8__.MissionComponent,
+        _why_why_component__WEBPACK_IMPORTED_MODULE_9__.WhyComponent,
+        _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__.ContactComponent,
+        _microsoft_microsoft_component__WEBPACK_IMPORTED_MODULE_11__.MicrosoftComponent,
+        //AwsComponent,
+        //CiscoComponent,
+        //ComptiaComponent,
+        //IscsComponent,
+        _tenantprofile_tenantprofile_component__WEBPACK_IMPORTED_MODULE_12__.TenantprofileComponent,
+        _property_details_property_details_component__WEBPACK_IMPORTED_MODULE_13__.PropertyDetailsComponent,
+        _registeration_form_registeration_form_component__WEBPACK_IMPORTED_MODULE_14__.RegisterationFormComponent,
+        _select_account_type_select_account_type_component__WEBPACK_IMPORTED_MODULE_15__.SelectAccountTypeComponent,
+        _reg_form_real_estate_reg_form_real_estate_component__WEBPACK_IMPORTED_MODULE_16__.RegFormRealEstateComponent,
+        _reg_form_landlord_reg_form_landlord_component__WEBPACK_IMPORTED_MODULE_17__.RegFormLandlordComponent,
+        _reg_form_tenant_reg_form_tenant_component__WEBPACK_IMPORTED_MODULE_18__.RegFormTenantComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__.BrowserModule,
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_22__.HttpClientModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormsModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_23__.ReactiveFormsModule] }); })();
+
+
+/***/ }),
+
+/***/ 1563:
+/*!**********************************************!*\
+  !*** ./src/app/contact/contact.component.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ContactComponent": () => (/* binding */ ContactComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class ContactComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+ContactComponent.ɵfac = function ContactComponent_Factory(t) { return new (t || ContactComponent)(); };
+ContactComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContactComponent, selectors: [["app-contact"]], decls: 9, vars: 0, consts: [[1, "content"], [2, "font-size", "35px"]], template: function ContactComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Contact \uD83D\uDCDE +92(345)8217078");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Email training@edu.primxact.com");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Website www.edu.primxact.com ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "WhatsApp https://primxact.com/whatsapp");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb250YWN0LmNvbXBvbmVudC5jc3MifQ== */", ".content[_ngcontent-%COMP%] {\n  display: flex;\n  margin: 82px auto 32px;\n  padding: 0 16px;\n  max-width: 960px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.bgcolor[_ngcontent-%COMP%]{\n  background-color:#233444;\n}"] });
+
+
+/***/ }),
+
+/***/ 1502:
+/*!*********************************!*\
+  !*** ./src/app/data.service.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataService": () => (/* binding */ DataService)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 6317);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+class DataService {
+    constructor() {
+        this.dataSource = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject('Initial Value');
+        this.data = this.dataSource.asObservable();
+    }
+    sendData(data) {
+        this.dataSource.next(data);
+    }
+}
+DataService.ɵfac = function DataService_Factory(t) { return new (t || DataService)(); };
+DataService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: DataService, factory: DataService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
+/***/ 4158:
+/*!******************************************************!*\
+  !*** ./src/app/datahandler/datahandler.component.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DatahandlerComponent": () => (/* binding */ DatahandlerComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+
+
+class DatahandlerComponent {
+    constructor(userdata) {
+        this.userdata = userdata;
+    }
+    getuserdata() {
+        this.userdata.getData().subscribe(data => {
+            console.warn(data);
+        });
+    }
+    ngOnInit() {
+    }
+}
+DatahandlerComponent.ɵfac = function DatahandlerComponent_Factory(t) { return new (t || DatahandlerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService)); };
+DatahandlerComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: DatahandlerComponent, selectors: [["app-datahandler"]], decls: 4, vars: 0, consts: [[3, "click"]], template: function DatahandlerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "datahandler works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function DatahandlerComponent_Template_button_click_2_listener() { return ctx.getuserdata(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Get Data");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkYXRhaGFuZGxlci5jb21wb25lbnQuY3NzIn0= */"] });
+
+
+/***/ }),
+
+/***/ 5067:
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HomeComponent": () => (/* binding */ HomeComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 2816);
+
+
+class HomeComponent {
+    constructor() {
+        this.logoimagepath = "assets/Logo.jpg";
+    }
+    ngOnInit() {
+    }
+}
+HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
+HomeComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 6, vars: 0, consts: [[1, "content"], [1, "btn-align"], ["routerLink", "/select-account-type", 1, "button"], ["routerLink", "/userlogin", 1, "button"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Signup");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Login");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLink], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5jc3MifQ== */", ".content[_ngcontent-%COMP%]{\n\n    padding : 300px;\n\n    background-color: #bfc3c5;\n\n    margin: 0px;\n\n\n  }\n\n  .btn-align[_ngcontent-%COMP%]{\n\n    padding: 20px;\n\n\n  }\n\n  .button[_ngcontent-%COMP%] {\n    background-color: #0a4f5f;\n    border: none;\n    color: white;\n    padding: 15px 80px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin: 4px 50px;\n    cursor: pointer;\n  }"] });
+
+
+/***/ }),
+
+/***/ 8410:
+/*!**************************************************!*\
+  !*** ./src/app/microsoft/microsoft.component.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MicrosoftComponent": () => (/* binding */ MicrosoftComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class MicrosoftComponent {
+    constructor() {
+        this.logoimage1path = "assets/Microsoft.png";
+        this.logoimage2path = "assets/Azure.png";
+        this.logoimage3path = "assets/Windows_Server.png";
+    }
+    ngOnInit() {
+    }
+}
+MicrosoftComponent.ɵfac = function MicrosoftComponent_Factory(t) { return new (t || MicrosoftComponent)(); };
+MicrosoftComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MicrosoftComponent, selectors: [["app-microsoft"]], decls: 14, vars: 3, consts: [[1, "content"], [2, "font-size", "35px"], ["height", "250px", "width", "450px", 1, "imgclass1", 3, "src"], ["height", "150px", "width", "150px", 1, "imgclass1", 3, "src"], ["height", "100px", "width", "400px", 1, "imgclass1", 3, "src"]], template: function MicrosoftComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Microsoft Windows Server Administration ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Microsoft Azure Cloud Administration ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "img", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Microsoft Azure Cloud Security Technologies");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Microsoft Power BI Data Analysis");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "img", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Microsoft Office 365");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.logoimage1path, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.logoimage2path, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.logoimage3path, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtaWNyb3NvZnQuY29tcG9uZW50LmNzcyJ9 */", ".content[_ngcontent-%COMP%] {\n  \n  \n  margin:  100px 100px 0px 200px;\n  \n  \n\n}\n\n.bgcolor[_ngcontent-%COMP%]{\n  background-color:#233444;\n}\n\n.imgclass1[_ngcontent-%COMP%]{\n    float :right;\n     margin: 1px 0px 0px 10px; \n}"] });
+
+
+/***/ }),
+
+/***/ 8553:
+/*!**********************************************!*\
+  !*** ./src/app/mission/mission.component.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MissionComponent": () => (/* binding */ MissionComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class MissionComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+MissionComponent.ɵfac = function MissionComponent_Factory(t) { return new (t || MissionComponent)(); };
+MissionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MissionComponent, selectors: [["app-mission"]], decls: 5, vars: 0, consts: [[1, "content"], [2, "font-size", "35px"]], template: function MissionComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Primxact has a track record of providing career-changing information technology, cyber security, and project management training.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "From novice to expert, we design learning paths for individuals and corporations. As a result of our experiences, we have come to the conclusion that in order to survive in the labor market, people need to receive professional knowledge in the form of internationally recognized certification training.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtaXNzaW9uLmNvbXBvbmVudC5jc3MifQ== */", ".content[_ngcontent-%COMP%] {\n  display: flex;\n  margin: 82px auto 32px;\n  padding: 0 16px;\n  max-width: 960px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.bgcolor[_ngcontent-%COMP%]{\n  background-color:#233444;\n}"] });
+
+
+/***/ }),
+
+/***/ 942:
+/*!****************************************************************!*\
+  !*** ./src/app/property-details/property-details.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PropertyDetailsComponent": () => (/* binding */ PropertyDetailsComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 8784);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+
+class PropertyDetailsComponent {
+    constructor(dataService, userdata, _httpA, fb) {
+        // this.form = this.fb.group({
+        //   property_name : [''],
+        //   image : [null]
+        // });
+        this.dataService = dataService;
+        this.userdata = userdata;
+        this._httpA = _httpA;
+        this.fb = fb;
+    }
+    ngOnInit() {
+        this.uploadForm = this.fb.group({
+            profile: [''],
+            property_name: ['']
+        });
+        this.dataService.data.subscribe(response => {
+            this.response1 = response;
+            console.log(this.response1); // you will receive the data from sender component here.
+        });
+    }
+    onFileChanged(event) {
+        var _a;
+        // this.selectedFile = event.target.files[0];
+        const file = event.target.files[0];
+        (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.setValue(file);
+        console.log(file);
+        // console.log(this.selectedFile);
+    }
+    onUpload() {
+        var _a, _b, _c;
+        const uploadData = new FormData();
+        // uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+        uploadData.append('myFile', (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.value);
+        uploadData.append('property_name', (_b = this.uploadForm.get('property_name')) === null || _b === void 0 ? void 0 : _b.value);
+        console.log((_c = this.uploadForm.get('profile')) === null || _c === void 0 ? void 0 : _c.value);
+        this._httpA.post('http://localhost:8080/angular_app_Rental/php/API_Upload_Property_Data_test.php', uploadData)
+            .subscribe(event => {
+            console.log(event);
+        });
+        //         this.userdata.postpropertyData(uploadData).subscribe((propertydataresult:any) => {
+        //   this.propertydataresult1 = propertydataresult
+        // })
+    }
+}
+PropertyDetailsComponent.ɵfac = function PropertyDetailsComponent_Factory(t) { return new (t || PropertyDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder)); };
+PropertyDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: PropertyDetailsComponent, selectors: [["app-property-details"]], decls: 9, vars: 3, template: function PropertyDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "property-details works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "\np>\n");
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.property_name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.property_image);
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9wZXJ0eS1kZXRhaWxzLmNvbXBvbmVudC5jc3MifQ== */"] });
+
+
+/***/ }),
+
+/***/ 1790:
+/*!**************************************************************!*\
+  !*** ./src/app/property-upload/property-upload.component.ts ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PropertyUploadComponent": () => (/* binding */ PropertyUploadComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 8784);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+
+class PropertyUploadComponent {
+    constructor(dataService, userdata, _httpA, fb) {
+        // this.form = this.fb.group({
+        //   property_name : [''],
+        //   image : [null]
+        // });
+        this.dataService = dataService;
+        this.userdata = userdata;
+        this._httpA = _httpA;
+        this.fb = fb;
+    }
+    ngOnInit() {
+        this.uploadForm = this.fb.group({
+            profile: [''],
+            property_name: ['']
+        });
+    }
+    onFileChanged(event) {
+        var _a;
+        // this.selectedFile = event.target.files[0];
+        const file = event.target.files[0];
+        (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.setValue(file);
+        console.log(file);
+        // console.log(this.selectedFile);
+    }
+    onUpload() {
+        var _a, _b, _c;
+        const uploadData = new FormData();
+        // uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+        uploadData.append('myFile', (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.value);
+        uploadData.append('property_name', (_b = this.uploadForm.get('property_name')) === null || _b === void 0 ? void 0 : _b.value);
+        console.log((_c = this.uploadForm.get('profile')) === null || _c === void 0 ? void 0 : _c.value);
+        this._httpA.post('http://localhost:8080/angular_app_Rental/php/API_Upload_Property_Data_test.php', uploadData)
+            .subscribe(event => {
+            console.log(event);
+        });
+        //         this.userdata.postpropertyData(uploadData).subscribe((propertydataresult:any) => {
+        //   this.propertydataresult1 = propertydataresult
+        // })
+    }
+}
+PropertyUploadComponent.ɵfac = function PropertyUploadComponent_Factory(t) { return new (t || PropertyUploadComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder)); };
+PropertyUploadComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: PropertyUploadComponent, selectors: [["app-property-upload"]], decls: 9, vars: 1, consts: [[3, "formGroup", "ngSubmit"], ["for", ""], ["type", "text", "name", "propertyname", "formControlName", "property_name"], ["type", "file", "name", "profile", 3, "change"], ["type", "submit"]], template: function PropertyUploadComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "property-upload works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "form", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngSubmit", function PropertyUploadComponent_Template_form_ngSubmit_2_listener() { return ctx.onUpload(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "label", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Property");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "input", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "input", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function PropertyUploadComponent_Template_input_change_6_listener($event) { return ctx.onFileChanged($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "Upload Image");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx.uploadForm);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9wZXJ0eS11cGxvYWQuY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
+/***/ 986:
+/*!******************************************************************!*\
+  !*** ./src/app/reg-form-landlord/reg-form-landlord.component.ts ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RegFormLandlordComponent": () => (/* binding */ RegFormLandlordComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+class RegFormLandlordComponent {
+    constructor(userdata, router) {
+        this.userdata = userdata;
+        this.router = router;
+        this.landlord_post_data_response_flag = [];
+    }
+    ngOnInit() {
+    }
+    post_landlord_reg_Data(landlord_current_form_data) {
+        console.log(landlord_current_form_data);
+        this.userdata.check_landlord_db_Data(landlord_current_form_data).subscribe((landlord_post_data_response) => {
+            this.landlord_post_data_response_flag = landlord_post_data_response;
+            // console.log(this.landlord_post_data_response_flag);
+            if (this.landlord_post_data_response_flag == null) {
+                console.log("Data does not exist in landlord DB please proceed to check data availability in real estate db");
+                this.userdata.check_real_estate_db_Data(landlord_current_form_data).subscribe((real_estate_db_Data_response) => {
+                    this.real_estate_db_data_response_flag = real_estate_db_Data_response;
+                    // console.log(this.real_estate_db_data_response_flag );
+                    if (this.real_estate_db_data_response_flag == null) {
+                        console.log("Data does not exist in real_estate DB please proceed to check data availability in tenant db");
+                        this.userdata.check_tenant_db_Data(landlord_current_form_data).subscribe((tenant_db_Data_response) => {
+                            this.tenant_db_Data_response_flag = tenant_db_Data_response;
+                            if (this.tenant_db_Data_response_flag == null) {
+                                console.log("Data does not exist in tenant DB please proceed to post data in as landlord");
+                                this.userdata.post_landlord_Data(landlord_current_form_data).subscribe((landlord_current_form_data_response) => {
+                                    this.landlord_current_form_data_response_flag = landlord_current_form_data_response;
+                                });
+                            }
+                            else {
+                                console.log("Email address already exist as Tenant");
+                            }
+                        });
+                    }
+                    else {
+                        console.log("Email address already exist as Real Estate Member");
+                    }
+                });
+            }
+            else {
+                console.log("Email Address already exist as Landlord");
+            }
+        });
+    }
+}
+RegFormLandlordComponent.ɵfac = function RegFormLandlordComponent_Factory(t) { return new (t || RegFormLandlordComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
+RegFormLandlordComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RegFormLandlordComponent, selectors: [["app-reg-form-landlord"]], decls: 59, vars: 0, consts: [[3, "ngSubmit"], ["usersForm", "ngForm"], [1, "container"], ["type", "text", "ngModel", "", "name", "company_name", "placeholder", "Enter Company Name"], ["type", "text", "ngModel", "", "name", "reg_id", "placeholder", "Enter Qatar ID"], ["type", "text", "ngModel", "", "name", "first_name", "placeholder", "Enter First Name"], ["type", "text", "ngModel", "", "name", "last_name", "placeholder", "Enter Last Name"], ["type", "text", "ngModel", "", "name", "country_name", "placeholder", "Enter Country of Residence"], ["type", "text", "ngModel", "", "name", "mobile_number", "placeholder", "Example # +97412345678"], ["type", "text", "ngModel", "", "name", "email", "placeholder", "Enter Email"], ["type", "password", "ngModel", "", "name", "pswrd", "placeholder", "Enter Password"], ["type", "checkbox", "checked", "checked", "name", "remember", 2, "margin-bottom", "15px"], ["href", "#", 2, "color", "dodgerblue"], [1, "clearfix"]], template: function RegFormLandlordComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function RegFormLandlordComponent_Template_form_ngSubmit_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r1); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](1); return ctx.post_landlord_reg_Data(_r0.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Sign Up");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Please fill in this form to create an account.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Company Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "input", 3)(11, "br")(12, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14, "Qatar ID");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "input", 4)(16, "br")(17, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "First Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "input", 5)(21, "br")(22, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](24, "Last Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](25, "input", 6)(26, "br")(27, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, "Country of Residence");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](30, "input", 7)(31, "br")(32, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34, "Mobile No.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](35, "input", 8)(36, "br")(37, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](40, "input", 9)(41, "br")(42, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](43, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](44, "Password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](45, "input", 10)(46, "br")(47, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](49, "input", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](50, " Remember me ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "By creating an account you agree to our ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](54, "Terms & Privacy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div", 13)(57, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](58, "Registers");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWctZm9ybS1sYW5kbG9yZC5jb21wb25lbnQuY3NzIn0= */", "body[_ngcontent-%COMP%] {font-family: Arial, Helvetica, sans-serif;}\n    *[_ngcontent-%COMP%] {box-sizing: border-box;}\n    \n    \n    input[type=text][_ngcontent-%COMP%], input[type=password][_ngcontent-%COMP%] {\n      width: 100%;\n      padding: 15px;\n      margin: 5px 0 22px 0;\n      display: inline-block;\n      border: none;\n      background: #f1f1f1;\n    }\n    \n    \n    input[type=text][_ngcontent-%COMP%]:focus, input[type=password][_ngcontent-%COMP%]:focus {\n      background-color: #ddd;\n      outline: none;\n    }\n    \n    \n    button[_ngcontent-%COMP%] {\n      background-color: #0a4f5f;\n      color: white;\n      padding: 14px 20px;\n      margin: 8px 0;\n      border: none;\n      cursor: pointer;\n      width: 100%;\n      opacity: 0.9;\n    }\n    \n    button[_ngcontent-%COMP%]:hover {\n      opacity:1;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%] {\n      padding: 14px 20px;\n      background-color: #f44336;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n      float: left;\n      width: 50%;\n    }\n    \n    \n    .container[_ngcontent-%COMP%] {\n      padding: 16px;\n    }\n    \n    \n    .modal[_ngcontent-%COMP%] {\n      display: none; \n      position: fixed; \n      z-index: 1; \n      left: 0;\n      top: 0;\n      width: 100%; \n      height: 100%; \n      overflow: auto; \n      background-color: #474e5d;\n      padding-top: 50px;\n    }\n    \n    \n    .modal-content[_ngcontent-%COMP%] {\n      background-color: #fefefe;\n      margin: 5% auto 15% auto; \n      border: 1px solid #888;\n      width: 80%; \n    }\n    \n    \n    hr[_ngcontent-%COMP%] {\n      border: 1px solid #f1f1f1;\n      margin-bottom: 25px;\n    }\n     \n    \n    .close[_ngcontent-%COMP%] {\n      position: absolute;\n      right: 35px;\n      top: 15px;\n      font-size: 40px;\n      font-weight: bold;\n      color: #f1f1f1;\n    }\n    \n    .close[_ngcontent-%COMP%]:hover, .close[_ngcontent-%COMP%]:focus {\n      color: #f44336;\n      cursor: pointer;\n    }\n    \n    \n    .clearfix[_ngcontent-%COMP%]::after {\n      content: \"\";\n      clear: both;\n      display: table;\n    }\n    \n    \n    @media screen and (max-width: 300px) {\n      .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n         width: 100%;\n      }\n    }"] });
+
+
+/***/ }),
+
+/***/ 1255:
+/*!************************************************************************!*\
+  !*** ./src/app/reg-form-real-estate/reg-form-real-estate.component.ts ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RegFormRealEstateComponent": () => (/* binding */ RegFormRealEstateComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+class RegFormRealEstateComponent {
+    constructor(userdata, router) {
+        this.userdata = userdata;
+        this.router = router;
+        this.breakloop1 = false;
+        this.breakloop2 = false;
+        this.real_estate_post_flag = "";
+        this.local_landlord_post_flag = "";
+        this.tenant_post_flag = "";
+    }
+    ngOnInit() { }
+    post_real_estate_reg_Data(real_estate_reg_current_form_data) {
+        console.log(real_estate_reg_current_form_data);
+        this.userdata.check_realestate_db_Data(real_estate_reg_current_form_data).subscribe((realestate_db_data_response) => {
+            this.realestate_db_data_flag = realestate_db_data_response;
+            if (this.realestate_db_data_flag == null) {
+                console.log("Data Does not exist in real_estate DB please proceed to check data availability in landlord DB");
+                this.userdata.check_local_landlord_db_Data(real_estate_reg_current_form_data).subscribe((local_landlord_db_data_response) => {
+                    this.local_landlord_db_data_response_flag = local_landlord_db_data_response;
+                    if (this.local_landlord_db_data_response_flag == null) {
+                        console.log("Data Does not exist in landlord DB please proceed to check data availability in tenant DB");
+                        this.userdata.check_data_tenant_db_Data(real_estate_reg_current_form_data).subscribe((tenant_db_Data_response) => {
+                            this.tenant_db_data_response_flag = tenant_db_Data_response;
+                            if (this.tenant_db_data_response_flag == null) {
+                                console.log("Data Does not exist in tenant DB please proceed to post data in real estate DB");
+                                this.userdata.post_real_estate_Data(real_estate_reg_current_form_data).subscribe((real_estate_data_response) => {
+                                    console.log(real_estate_data_response);
+                                });
+                            }
+                            else {
+                                console.log("Email Address already exist as tenant");
+                            }
+                        });
+                    }
+                    else {
+                        console.log("Email Address already exist as Landlord");
+                    }
+                });
+            }
+            else {
+                console.log("Email Address already exist as Real Estate Member");
+            }
+        });
+    }
+}
+RegFormRealEstateComponent.ɵfac = function RegFormRealEstateComponent_Factory(t) { return new (t || RegFormRealEstateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
+RegFormRealEstateComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RegFormRealEstateComponent, selectors: [["app-reg-form-real-estate"]], decls: 61, vars: 0, consts: [[3, "ngSubmit"], ["usersForm", "ngForm"], [1, "container"], ["type", "text", "ngModel", "", "name", "company_name", "placeholder", "Enter Company Name should be as per CR"], ["type", "text", "ngModel", "", "name", "reg_id", "placeholder", "Enter Commercial Registeration"], ["type", "text", "ngModel", "", "name", "first_name", "placeholder", "Enter First Name"], ["type", "text", "ngModel", "", "name", "last_name", "placeholder", "Enter Last Name"], ["type", "text", "ngModel", "", "name", "country_name", "placeholder", "Enter Country of Residence"], ["type", "text", "ngModel", "", "name", "mobile_number", "placeholder", "Example # +97412345678"], ["type", "text", "ngModel", "", "name", "email", "placeholder", "Enter Email"], ["type", "password", "ngModel", "", "name", "pswrd", "placeholder", "Enter Password"], ["type", "checkbox", "checked", "checked", "name", "remember", 2, "margin-bottom", "15px"], ["href", "#", 2, "color", "dodgerblue"], [1, "clearfix"]], template: function RegFormRealEstateComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "reg-form-real-estate works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function RegFormRealEstateComponent_Template_form_ngSubmit_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r1); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](3); return ctx.post_real_estate_reg_Data(_r0.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2)(5, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Sign Up");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Please fill in this form to create an account.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Company Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "input", 3)(13, "br")(14, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](16, "Commercial Registeration #");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](17, "input", 4)(18, "br")(19, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "First Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](22, "input", 5)(23, "br")(24, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Last Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](27, "input", 6)(28, "br")(29, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Country of Residence");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "input", 7)(33, "br")(34, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](36, "Mobile No.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](37, "input", 8)(38, "br")(39, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](41, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](42, "input", 9)(43, "br")(44, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, "Password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](47, "input", 10)(48, "br")(49, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](51, "input", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, " Remember me ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](54, "By creating an account you agree to our ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](56, "Terms & Privacy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "div", 13)(59, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, "Registers");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWctZm9ybS1yZWFsLWVzdGF0ZS5jb21wb25lbnQuY3NzIn0= */", "body[_ngcontent-%COMP%] {font-family: Arial, Helvetica, sans-serif;}\n    *[_ngcontent-%COMP%] {box-sizing: border-box;}\n    \n    \n    input[type=text][_ngcontent-%COMP%], input[type=password][_ngcontent-%COMP%] {\n      width: 100%;\n      padding: 15px;\n      margin: 5px 0 22px 0;\n      display: inline-block;\n      border: none;\n      background: #f1f1f1;\n    }\n    \n    \n    input[type=text][_ngcontent-%COMP%]:focus, input[type=password][_ngcontent-%COMP%]:focus {\n      background-color: #ddd;\n      outline: none;\n    }\n    \n    \n    button[_ngcontent-%COMP%] {\n      background-color: #0a4f5f;\n      color: white;\n      padding: 14px 20px;\n      margin: 8px 0;\n      border: none;\n      cursor: pointer;\n      width: 100%;\n      opacity: 0.9;\n    }\n    \n    button[_ngcontent-%COMP%]:hover {\n      opacity:1;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%] {\n      padding: 14px 20px;\n      background-color: #f44336;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n      float: left;\n      width: 50%;\n    }\n    \n    \n    .container[_ngcontent-%COMP%] {\n      padding: 16px;\n    }\n    \n    \n    .modal[_ngcontent-%COMP%] {\n      display: none; \n      position: fixed; \n      z-index: 1; \n      left: 0;\n      top: 0;\n      width: 100%; \n      height: 100%; \n      overflow: auto; \n      background-color: #474e5d;\n      padding-top: 50px;\n    }\n    \n    \n    .modal-content[_ngcontent-%COMP%] {\n      background-color: #fefefe;\n      margin: 5% auto 15% auto; \n      border: 1px solid #888;\n      width: 80%; \n    }\n    \n    \n    hr[_ngcontent-%COMP%] {\n      border: 1px solid #f1f1f1;\n      margin-bottom: 25px;\n    }\n     \n    \n    .close[_ngcontent-%COMP%] {\n      position: absolute;\n      right: 35px;\n      top: 15px;\n      font-size: 40px;\n      font-weight: bold;\n      color: #f1f1f1;\n    }\n    \n    .close[_ngcontent-%COMP%]:hover, .close[_ngcontent-%COMP%]:focus {\n      color: #f44336;\n      cursor: pointer;\n    }\n    \n    \n    .clearfix[_ngcontent-%COMP%]::after {\n      content: \"\";\n      clear: both;\n      display: table;\n    }\n    \n    \n    @media screen and (max-width: 300px) {\n      .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n         width: 100%;\n      }\n    }"] });
+
+
+/***/ }),
+
+/***/ 7926:
+/*!**************************************************************!*\
+  !*** ./src/app/reg-form-tenant/reg-form-tenant.component.ts ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RegFormTenantComponent": () => (/* binding */ RegFormTenantComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+class RegFormTenantComponent {
+    constructor(userdata, router) {
+        this.userdata = userdata;
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    post_tenant_reg_Data(tenant_reg_current_form_data) {
+        console.log(tenant_reg_current_form_data);
+        this.userdata.check_post_tenant_db_Data(tenant_reg_current_form_data).subscribe((tenant_db_data_response) => {
+            this.tenant_db_data_respnse_flag = tenant_db_data_response;
+            this.tenant_data = this.tenant_db_data_respnse_flag;
+            // console.log(this.tenant_db_data_respnse_flag);
+            if (this.tenant_db_data_respnse_flag == null) {
+                console.log("Data does not exist in tenant DB please proceed to check data availability in real estate db");
+                this.userdata.check_post_real_estate_db_Data(tenant_reg_current_form_data).subscribe((real_estate_db_data_response) => {
+                    // console.log(real_estate_db_data_response);
+                    this.real_estate_db_data_response_flag = real_estate_db_data_response;
+                    if (this.real_estate_db_data_response_flag == null) {
+                        console.log("Data does not exist in real estate DB please proceed to check data availability in landlord db");
+                        this.userdata.check_post_landlord_db_Data(tenant_reg_current_form_data).subscribe((landlord_db_Data_response) => {
+                            this.landlord_db_Data_response_flag = landlord_db_Data_response;
+                            if (this.landlord_db_Data_response_flag == null) {
+                                console.log("Data does not exist in in landlord DB please proceed to post data in tenant DB");
+                                this.userdata.post_tenant_Data(tenant_reg_current_form_data).subscribe((tenant_Data_response) => {
+                                    console.log(tenant_Data_response);
+                                });
+                            }
+                            else {
+                                console.log("Email Address exist as Tenant");
+                            }
+                        });
+                    }
+                    else {
+                        console.log("Email Address already exist Real Estate member");
+                    }
+                });
+            }
+            else {
+                console.log("Email Address already exist as tenant");
+            }
+        });
+    }
+}
+RegFormTenantComponent.ɵfac = function RegFormTenantComponent_Factory(t) { return new (t || RegFormTenantComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
+RegFormTenantComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RegFormTenantComponent, selectors: [["app-reg-form-tenant"]], decls: 66, vars: 0, consts: [[3, "ngSubmit"], ["usersForm", "ngForm"], [1, "container"], ["name", "Catogory", "ngModel", "", "name", "selected_realestate_landlord", "type", "text"], ["value", "Ezdan"], ["value", "Capital_One"], ["value", "abc_company"], ["type", "text", "ngModel", "", "name", "reg_id", "placeholder", "Enter Qatar ID"], ["type", "text", "ngModel", "", "name", "first_name", "placeholder", "Enter First Name"], ["type", "text", "ngModel", "", "name", "last_name", "placeholder", "Enter Last Name"], ["type", "text", "ngModel", "", "name", "country_name", "placeholder", "Enter Country of Residence"], ["type", "text", "ngModel", "", "name", "mobile_number", "placeholder", "Example # +97412345678"], ["type", "text", "ngModel", "", "name", "email", "placeholder", "Enter Email"], ["type", "password", "ngModel", "", "name", "pswrd", "placeholder", "Enter Password"], ["type", "checkbox", "checked", "checked", "name", "remember", 2, "margin-bottom", "15px"], ["href", "#", 2, "color", "dodgerblue"], [1, "clearfix"]], template: function RegFormTenantComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function RegFormTenantComponent_Template_form_ngSubmit_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r1); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](1); return ctx.post_tenant_reg_Data(_r0.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Sign Up");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Please fill in this form to create an account.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Select Your Real Estate Property/Landlord");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "select", 3)(12, "option", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "EZDAN");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "option", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Capital One");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "option", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "abc Company");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](18, "br")(19, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Qatar ID");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](22, "input", 7)(23, "br")(24, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "First Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](27, "input", 8)(28, "br")(29, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Last Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "input", 9)(33, "br")(34, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](36, "Country of Residence");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](37, "input", 10)(38, "br")(39, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](41, "Mobile No.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](42, "input", 11)(43, "br")(44, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](47, "input", 12)(48, "br")(49, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](51, "Password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](52, "input", 13)(53, "br")(54, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](56, "input", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, " Remember me ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "By creating an account you agree to our ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](60, "a", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](61, "Terms & Privacy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](62, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](63, "div", 16)(64, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](65, "Registers");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWctZm9ybS10ZW5hbnQuY29tcG9uZW50LmNzcyJ9 */", "body[_ngcontent-%COMP%] {font-family: Arial, Helvetica, sans-serif;}\n    *[_ngcontent-%COMP%] {box-sizing: border-box;}\n    \n    \n    input[type=text][_ngcontent-%COMP%], input[type=password][_ngcontent-%COMP%] {\n      width: 100%;\n      padding: 15px;\n      margin: 5px 0 22px 0;\n      display: inline-block;\n      border: none;\n      background: #f1f1f1;\n    }\n    \n    \n    input[type=text][_ngcontent-%COMP%]:focus, input[type=password][_ngcontent-%COMP%]:focus {\n      background-color: #ddd;\n      outline: none;\n    }\n    \n    \n    button[_ngcontent-%COMP%] {\n      background-color: #0a4f5f;\n      color: white;\n      padding: 14px 20px;\n      margin: 8px 0;\n      border: none;\n      cursor: pointer;\n      width: 100%;\n      opacity: 0.9;\n    }\n    \n    button[_ngcontent-%COMP%]:hover {\n      opacity:1;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%] {\n      padding: 14px 20px;\n      background-color: #f44336;\n    }\n    \n    \n    .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n      float: left;\n      width: 50%;\n    }\n    \n    \n    .container[_ngcontent-%COMP%] {\n      padding: 16px;\n    }\n    \n    \n    .modal[_ngcontent-%COMP%] {\n      display: none; \n      position: fixed; \n      z-index: 1; \n      left: 0;\n      top: 0;\n      width: 100%; \n      height: 100%; \n      overflow: auto; \n      background-color: #474e5d;\n      padding-top: 50px;\n    }\n    \n    \n    .modal-content[_ngcontent-%COMP%] {\n      background-color: #fefefe;\n      margin: 5% auto 15% auto; \n      border: 1px solid #888;\n      width: 80%; \n    }\n    \n    \n    hr[_ngcontent-%COMP%] {\n      border: 1px solid #f1f1f1;\n      margin-bottom: 25px;\n    }\n     \n    \n    .close[_ngcontent-%COMP%] {\n      position: absolute;\n      right: 35px;\n      top: 15px;\n      font-size: 40px;\n      font-weight: bold;\n      color: #f1f1f1;\n    }\n    \n    .close[_ngcontent-%COMP%]:hover, .close[_ngcontent-%COMP%]:focus {\n      color: #f44336;\n      cursor: pointer;\n    }\n    \n    \n    .clearfix[_ngcontent-%COMP%]::after {\n      content: \"\";\n      clear: both;\n      display: table;\n    }\n    \n    \n    @media screen and (max-width: 300px) {\n      .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n         width: 100%;\n      }\n    }"] });
+
+
+/***/ }),
+
+/***/ 5816:
+/*!********************************************************************!*\
+  !*** ./src/app/registeration-form/registeration-form.component.ts ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RegisterationFormComponent": () => (/* binding */ RegisterationFormComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class RegisterationFormComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+RegisterationFormComponent.ɵfac = function RegisterationFormComponent_Factory(t) { return new (t || RegisterationFormComponent)(); };
+RegisterationFormComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RegisterationFormComponent, selectors: [["app-registeration-form"]], decls: 2, vars: 0, template: function RegisterationFormComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "registeration-form works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWdpc3RlcmF0aW9uLWZvcm0uY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
+/***/ 4942:
+/*!**********************************************************************!*\
+  !*** ./src/app/select-account-type/select-account-type.component.ts ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SelectAccountTypeComponent": () => (/* binding */ SelectAccountTypeComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 2816);
+
+
+class SelectAccountTypeComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+SelectAccountTypeComponent.ɵfac = function SelectAccountTypeComponent_Factory(t) { return new (t || SelectAccountTypeComponent)(); };
+SelectAccountTypeComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SelectAccountTypeComponent, selectors: [["app-select-account-type"]], decls: 8, vars: 0, consts: [[1, "content"], [1, "btn-align"], ["routerLink", "/reg-form-real-estate", 1, "button"], ["routerLink", "/reg-form-landlord", 1, "button"], ["routerLink", "/reg-form-tenant", 1, "button"]], template: function SelectAccountTypeComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Real Estate");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Landlord");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Tenant");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLink], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzZWxlY3QtYWNjb3VudC10eXBlLmNvbXBvbmVudC5jc3MifQ== */", ".content[_ngcontent-%COMP%]{\n  \n      padding : 300px;\n  \n      background-color: #bfc3c5;\n  \n      margin: 0px;\n  \n  \n    }\n  \n    .btn-align[_ngcontent-%COMP%]{\n  \n      padding: 20px;\n  \n  \n    }\n  \n    .button[_ngcontent-%COMP%] {\n      background-color: #0a4f5f;\n      border: none;\n      color: white;\n      padding: 15px 80px;\n      text-align: center;\n      text-decoration: none;\n      display: inline-block;\n      font-size: 16px;\n      margin: 4px 50px;\n      cursor: pointer;\n    }"] });
+
+
+/***/ }),
+
+/***/ 1102:
+/*!**********************************************************!*\
+  !*** ./src/app/tenantprofile/tenantprofile.component.ts ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TenantprofileComponent": () => (/* binding */ TenantprofileComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ 1491);
+
+
+
+class TenantprofileComponent {
+    // imagedirectoryPath : any = "angular_app_Rental/php/";
+    constructor(dataService, userdata) {
+        this.dataService = dataService;
+        this.userdata = userdata;
+        this.imagedirectoryPath = "http://localhost:8080/angular_app_Rental/php/";
+    }
+    ngOnInit() {
+        this.dataService.data.subscribe((response) => {
+            this.tenantresponse1 = response;
+            console.log(this.tenantresponse1); // you will receive the data from sender component here.
+            console.log(this.tenantresponse1);
+        });
+    }
+    displayimage() {
+        this.userdata.getpropertyData().subscribe((propertydata) => {
+            this.propertydata = propertydata;
+            console.log(this.propertydata['id']);
+            console.log(this.propertydata['property_name']);
+            {
+                this.logoimage1path = ((this.imagedirectoryPath), (this.propertydata['property_image']));
+            }
+            // console.log((this.imagedirectoryPath),(this.logoimage1path));
+            console.log((this.imagepath) = (this.imagedirectoryPath), (this.logoimage1path));
+            console.log(this.logoimage1path);
+            // this.imagedirectoryPath.this.logoimage1path;
+        });
+    }
+}
+TenantprofileComponent.ɵfac = function TenantprofileComponent_Factory(t) { return new (t || TenantprofileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService)); };
+TenantprofileComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TenantprofileComponent, selectors: [["app-tenantprofile"]], decls: 18, vars: 0, consts: [["href", "#home", 1, "active"], ["href", "#news"], ["href", "#contact"], ["href", "#about"], [2, "margin-left", "25%", "padding", "1px 16px", "height", "1000px"]], template: function TenantprofileComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "body")(1, "ul")(2, "li")(3, "a", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Dashboard");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "li")(6, "a", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Payments");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "li")(9, "a", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Receipts");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "li")(12, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "Leases");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "li")(15, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "Signout");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](17, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0ZW5hbnRwcm9maWxlLmNvbXBvbmVudC5jc3MifQ== */", "body[_ngcontent-%COMP%] {\n      margin: 0;\n    }\n    \n    ul[_ngcontent-%COMP%] {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      width: 15%;\n      background-color: #0a4f5f;\n      position: absolute;\n      height: 1000px;\n      overflow: auto;\n    }\n    \n    li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n      display: block;\n      color: white;\n      padding: 8px 16px;\n      text-decoration: none;\n    }\n    \n    li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n      background-color: white;\n      color: black;\n    }\n    \n    li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover:not(.active) {\n      background-color: #e95622;\n      color: white;\n    }"] });
+
+
+/***/ }),
+
+/***/ 7559:
+/*!**************************************************!*\
+  !*** ./src/app/userlogin/userlogin.component.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UserloginComponent": () => (/* binding */ UserloginComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+
+//import 'rxjs/add/operator/map';
+class UserloginComponent {
+    constructor(router, userdata, dataService) {
+        this.router = router;
+        this.userdata = userdata;
+        this.dataService = dataService;
+        this.text = "";
+        this.responsenull = "";
+        this.responsenulltenant = "";
+    }
+    ngOnInit() { }
+    userlogin(data) {
+        //console.warn(data) //To check what data is coming from login form
+        this.userdata.loginData(data).subscribe((result) => {
+            {
+                this.response = result;
+            }
+            //console.warn(this.response)
+            if (this.response == null) {
+                //console.log("Incorrect")
+                this.responsenull = "No user found in loadlord DB please proceed to check userdata in tenant DB";
+                console.warn(this.responsenull);
+                /////////////////////Testing//////////////////////////////////////////////////////////////////        
+                this.userdata.logintenantData(data).subscribe((resulttenant) => {
+                    {
+                        this.responsetenant = resulttenant;
+                    }
+                    if (this.responsetenant == null) {
+                        this.responsenulltenant = "No user found in tenant DB also you are using incorrect username or password";
+                        console.warn(this.responsenulltenant);
+                    }
+                    else {
+                        this.dataService.sendData(resulttenant);
+                        this.router.navigate(['/', 'tenantprofile']);
+                        this.responsenulltenant = "Result found in Tenant DB Proceed to login to the Tenant Profile";
+                        console.warn(this.responsenulltenant);
+                    }
+                });
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
+            else {
+                this.responsenull = "Result found in Landlord DB Proceed to login to the Landlord Profile";
+                console.warn(this.responsenull);
+                this.dataService.sendData(result);
+                this.router.navigate(['/', 'userprofile']);
+            }
+        });
+        // this.dataService.sendData(this.response);
+    }
+    ;
+    //logindata  = "This is new Data";
+    sendNewData(response) {
+        //this.dataService.sendData(response); 
+    }
+}
+UserloginComponent.ɵfac = function UserloginComponent_Factory(t) { return new (t || UserloginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_1__.DataService)); };
+UserloginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: UserloginComponent, selectors: [["app-userlogin"]], decls: 14, vars: 1, consts: [[3, "ngSubmit"], ["usersForm", "ngForm"], ["type", "text", "ngModel", "", "name", "Email", "placeholder", "Enter Email"], ["type", "password", "ngModel", "", "name", "Pswrd", "placeholder", "Enter Pasword"]], template: function UserloginComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "userlogin works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngSubmit", function UserloginComponent_Template_form_ngSubmit_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r1); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](3); return ctx.userlogin(_r0.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](4, "input", 2)(5, "br")(6, "br")(7, "input", 3)(8, "br")(9, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Login");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.responsenull);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgForm, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgModel], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VybG9naW4uY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
+/***/ 8536:
+/*!******************************************************!*\
+  !*** ./src/app/userprofile/userprofile.component.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UserprofileComponent": () => (/* binding */ UserprofileComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 8784);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 6362);
+
+
+
+
+
+
+
+function UserprofileComponent_div_39_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 6)(1, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 7)(8, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function UserprofileComponent_div_39_Template_button_click_8_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r3); const item_r1 = restoredCtx.$implicit; const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r2.respectiveData(item_r1.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Property Detail");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](10, "br")(11, "br");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r1.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", item_r1.property_name, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", item_r1.property_image, "");
+} }
+class UserprofileComponent {
+    // //////////////////////////////////////////////////////////////////////////////////
+    constructor(dataService, userdata, _httpA, fb, router) {
+        // this.form = this.fb.group({
+        //   property_name : [''],
+        //   image : [null]
+        // });
+        this.dataService = dataService;
+        this.userdata = userdata;
+        this._httpA = _httpA;
+        this.fb = fb;
+        this.router = router;
+    }
+    ngOnInit() {
+        this.dataService.data.subscribe(response => {
+            this.response1 = response;
+            console.log(this.response1); // you will receive the data from sender component here.
+        });
+        ///////////////////////////////////////////////////////////////////
+        this.uploadForm = this.fb.group({
+            profile: [''],
+            property_name: ['']
+        });
+        //////////////////////////////////////////////////////////////////
+        this.userdata.getpropertyData().subscribe((propertydataresult) => {
+            this.propertydataresult1 = propertydataresult;
+            console.log(this.propertydataresult1);
+        });
+    }
+    respectiveData(id) {
+        // console.log(id);
+        this.userdata.getpropertyDetail(id).subscribe((propertydetail) => {
+            this.propertydetail1 = propertydetail;
+            console.log(this.propertydetail1);
+            this.dataService.sendData(propertydetail);
+        });
+        this.router.navigate(['/', 'property-details']);
+    }
+    onFileChanged(event) {
+        var _a;
+        // this.selectedFile = event.target.files[0];
+        const file = event.target.files[0];
+        (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.setValue(file);
+        console.log(file);
+        // console.log(this.selectedFile);
+    }
+    onUpload() {
+        var _a, _b, _c;
+        const uploadData = new FormData();
+        // uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+        uploadData.append('myFile', (_a = this.uploadForm.get('profile')) === null || _a === void 0 ? void 0 : _a.value);
+        uploadData.append('property_name', (_b = this.uploadForm.get('property_name')) === null || _b === void 0 ? void 0 : _b.value);
+        console.log((_c = this.uploadForm.get('profile')) === null || _c === void 0 ? void 0 : _c.value);
+        this._httpA.post('http://localhost:8080/angular_app_Rental/php/API_Upload_Property_Data_test.php', uploadData)
+            .subscribe(event => {
+            console.log(event);
+        });
+    }
+}
+UserprofileComponent.ɵfac = function UserprofileComponent_Factory(t) { return new (t || UserprofileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };
+UserprofileComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: UserprofileComponent, selectors: [["app-userprofile"]], decls: 40, vars: 7, consts: [["href", "#home", 1, "active"], ["href", "#news"], ["href", "#contact"], ["href", "#about"], [2, "margin-left", "25%", "padding", "1px 16px", "height", "1000px"], ["class", "textcentre", 4, "ngFor", "ngForOf"], [1, "textcentre"], [1, "block"], [3, "click"]], template: function UserprofileComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "body")(1, "ul")(2, "li")(3, "a", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Dashboard");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "li")(6, "a", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Properties");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "li")(9, "a", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Payments");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "li")(12, "a", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "Receipts");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "li")(15, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "Leases");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "li")(18, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "Signout");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](20, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](21, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "div")(23, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, "userprofile (Landlord) works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](27, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](29, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](31, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](33, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](35, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](37, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](38, "display Uploaded Properties");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](39, UserprofileComponent_div_39_Template, 12, 3, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.FName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.LName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.Email);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.Pswrd);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.response1.accounttype);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.propertydataresult1);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VycHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */", "body[_ngcontent-%COMP%] {\n      margin: 0;\n    }\n    \n    ul[_ngcontent-%COMP%] {\n      list-style-type: none;\n      margin: 0;\n      padding: 0;\n      width: 15%;\n      background-color: #0a4f5f;\n      position: absolute;\n      height: 1000px;\n      overflow: auto;\n    }\n    \n    li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n      display: block;\n      color: white;\n      padding: 8px 16px;\n      text-decoration: none;\n    }\n    \n    li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n      background-color: white;\n      color: black;\n    }\n    \n    li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover:not(.active) {\n      background-color: #e95622;\n      color: white;\n    }"] });
+
+
+/***/ }),
+
+/***/ 7160:
+/*!****************************************************!*\
+  !*** ./src/app/usersignup/usersignup.component.ts ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UsersignupComponent": () => (/* binding */ UsersignupComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api.service */ 1491);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 587);
+
+
+
+
+class UsersignupComponent {
+    constructor(userdata, router) {
+        this.userdata = userdata;
+        this.router = router;
+        this.postdataflag = "";
+        this.i = 0;
+    }
+    ngOnInit() { }
+    postUserData(data) {
+        console.warn(data);
+        this.testdata = data;
+        console.warn(this.testdata["accounttype"]);
+        // Line for testing)
+        // this.userdata.postData(data).subscribe((result:any) => {
+        //   console.log(result)}); 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //API to POST Data in Landlord Database///////////////////////////////////////////////////////
+        if (this.testdata["accounttype"] == "landlord") {
+            this.userdata.getData().subscribe((fulldbdata) => {
+                console.warn(fulldbdata);
+                this.arrlength = fulldbdata.length;
+                // console.log(this.arrlength);
+                let i = 0;
+                while (i <= this.arrlength - 1) {
+                    this.dbdata = fulldbdata[i];
+                    //console.log(this.dbdata);
+                    if (this.dbdata["Email"] == data["Email"]) {
+                        this.postdataflag = "Email Exist Press Reset If Password has been Forgotten";
+                        break;
+                    }
+                    else {
+                        this.postdataflag = "Post Data";
+                    }
+                    i++;
+                }
+                console.log(this.postdataflag);
+                if (this.postdataflag == "Post Data") {
+                    console.log("Go Head Post Data into Database");
+                    this.userdata.postData(data).subscribe((result) => {
+                        console.log(result);
+                    });
+                    // this.router.navigate(['/', 'userlogin']);
+                }
+            });
+        }
+        //API POST Data in Landlord Database END/////////////////////////////////////////////////////////////////////////
+        //API POST Data in Tenant Database ///////////////////////////////////////////////////////////////////////////////
+        else if (this.testdata["accounttype"] == "tenant") {
+            //console.log("Post Data to Tenant DB")
+            this.userdata.gettenantData().subscribe((fulltenantdbdata) => {
+                console.warn(fulltenantdbdata);
+                this.arrtenantlength = fulltenantdbdata.length;
+                // console.log(this.arrlength);
+                let i = 0;
+                while (i <= this.arrtenantlength - 1) {
+                    this.tenantdbdata = fulltenantdbdata[i];
+                    //console.log(this.dbdata);
+                    if (this.tenantdbdata["Email"] == data["Email"]) {
+                        this.postdataflag = "Email Exist Press Reset If Password has been Forgotten";
+                        break;
+                    }
+                    else {
+                        this.postdataflag = "Post Data";
+                    }
+                    i++;
+                }
+                console.log(this.postdataflag);
+                if (this.postdataflag == "Post Data") {
+                    console.log("Go Head Post Data into Database");
+                    this.userdata.posttenantData(data).subscribe((result) => {
+                        console.log(result);
+                    });
+                    // this.router.navigate(['/', 'userlogin']);
+                }
+            });
+        }
+        //API POST Data in Tenant Database END///////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    }
+    ;
+}
+UsersignupComponent.ɵfac = function UsersignupComponent_Factory(t) { return new (t || UsersignupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
+UsersignupComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: UsersignupComponent, selectors: [["app-usersignup"]], decls: 53, vars: 0, consts: [[3, "ngSubmit"], ["usersForm", "ngForm"], [1, "container"], ["name", "Catogory", "ngModel", "", "name", "accounttype", "type", "text"], ["value", "landlord"], ["value", "tenant"], ["value", "real_estate"], ["type", "text", "ngModel", "", "name", "FName", "placeholder", "Enter First Name"], ["type", "text", "ngModel", "", "name", "LName", "placeholder", "Enter Last Name"], ["type", "text", "ngModel", "", "name", "Email", "placeholder", "Enter Email"], ["type", "password", "ngModel", "", "name", "Pswrd", "placeholder", "Enter Pasword"], ["type", "checkbox", "checked", "checked", "name", "remember", 2, "margin-bottom", "15px"], ["href", "#", 2, "color", "dodgerblue"], [1, "clearfix"]], template: function UsersignupComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "usersignup works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function UsersignupComponent_Template_form_ngSubmit_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r1); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](3); return ctx.postUserData(_r0.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2)(5, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Sign Up");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Please fill in this form to create an account.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Account Type");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "select", 3)(14, "option", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Landlord");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "option", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Tenant");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "option", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Real Estate");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "br")(21, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "First Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](24, "input", 7)(25, "br")(26, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28, "Last Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](29, "input", 8)(30, "br")(31, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](34, "input", 9)(35, "br")(36, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](39, "input", 10)(40, "br")(41, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](43, "input", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](44, " Remember me ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, "By creating an account you agree to our ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](47, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](48, "Terms & Privacy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "div", 13)(51, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "Registers");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2Vyc2lnbnVwLmNvbXBvbmVudC5jc3MifQ== */", "body[_ngcontent-%COMP%] {font-family: Arial, Helvetica, sans-serif;}\n*[_ngcontent-%COMP%] {box-sizing: border-box;}\n\n\ninput[type=text][_ngcontent-%COMP%], input[type=password][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 15px;\n  margin: 5px 0 22px 0;\n  display: inline-block;\n  border: none;\n  background: #f1f1f1;\n}\n\n\ninput[type=text][_ngcontent-%COMP%]:focus, input[type=password][_ngcontent-%COMP%]:focus {\n  background-color: #ddd;\n  outline: none;\n}\n\n\nbutton[_ngcontent-%COMP%] {\n  background-color: #0a4f5f;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%;\n  opacity: 0.9;\n}\n\nbutton[_ngcontent-%COMP%]:hover {\n  opacity:1;\n}\n\n\n.cancelbtn[_ngcontent-%COMP%] {\n  padding: 14px 20px;\n  background-color: #f44336;\n}\n\n\n.cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n  float: left;\n  width: 50%;\n}\n\n\n.container[_ngcontent-%COMP%] {\n  padding: 16px;\n}\n\n\n.modal[_ngcontent-%COMP%] {\n  display: none; \n  position: fixed; \n  z-index: 1; \n  left: 0;\n  top: 0;\n  width: 100%; \n  height: 100%; \n  overflow: auto; \n  background-color: #474e5d;\n  padding-top: 50px;\n}\n\n\n.modal-content[_ngcontent-%COMP%] {\n  background-color: #fefefe;\n  margin: 5% auto 15% auto; \n  border: 1px solid #888;\n  width: 80%; \n}\n\n\nhr[_ngcontent-%COMP%] {\n  border: 1px solid #f1f1f1;\n  margin-bottom: 25px;\n}\n \n\n.close[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 35px;\n  top: 15px;\n  font-size: 40px;\n  font-weight: bold;\n  color: #f1f1f1;\n}\n\n.close[_ngcontent-%COMP%]:hover, .close[_ngcontent-%COMP%]:focus {\n  color: #f44336;\n  cursor: pointer;\n}\n\n\n.clearfix[_ngcontent-%COMP%]::after {\n  content: \"\";\n  clear: both;\n  display: table;\n}\n\n\n@media screen and (max-width: 300px) {\n  .cancelbtn[_ngcontent-%COMP%], .signupbtn[_ngcontent-%COMP%] {\n     width: 100%;\n  }\n}"] });
+
+
+/***/ }),
+
+/***/ 5382:
+/*!**************************************!*\
+  !*** ./src/app/why/why.component.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "WhyComponent": () => (/* binding */ WhyComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class WhyComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+WhyComponent.ɵfac = function WhyComponent_Factory(t) { return new (t || WhyComponent)(); };
+WhyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WhyComponent, selectors: [["app-why"]], decls: 7, vars: 0, consts: [[1, "content"], [2, "font-size", "35px"]], template: function WhyComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "We offer the most up-to-date training and material from industry experts.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Not only do you provide excellent content, but you also provide excellent mentoring.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "We offer the greatest student assistance services available.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ3aHkuY29tcG9uZW50LmNzcyJ9 */", ".content[_ngcontent-%COMP%] {\n  display: flex;\n  margin: 82px auto 32px;\n  padding: 0 16px;\n  max-width: 960px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.bgcolor[_ngcontent-%COMP%]{\n  background-color:#233444;\n}"] });
+
+
+/***/ }),
+
+/***/ 2340:
+/*!*****************************************!*\
+  !*** ./src/environments/environment.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "environment": () => (/* binding */ environment)
+/* harmony export */ });
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+const environment = {
+    production: false
+};
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ 4431:
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 318);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 6747);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 2340);
+
+
+
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production) {
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.enableProdMode)();
+}
+_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
+    .catch(err => console.error(err));
+
+
+/***/ })
+
+},
+/******/ __webpack_require__ => { // webpackRuntimeModules
+/******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(8202), __webpack_exec__(4431)));
+/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ }
+]);
+//# sourceMappingURL=main.js.map

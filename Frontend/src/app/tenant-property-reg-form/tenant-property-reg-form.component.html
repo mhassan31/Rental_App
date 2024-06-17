@@ -1,0 +1,386 @@
+<!-- <p>userprofile (Landlord) works!</p>
+<p>{{newsessData.id}}</p>
+<p>{{newsessData.FName}}</p>
+<p>{{newsessData.LName}}</p>
+<p>{{newsessData.Email}}</p>
+<p>{{newsessData.Pswrd}}</p>
+<p>{{newsessData.accounttype}}</p> -->
+
+<style>
+    /* ***********************************************Side Nav Bar********************************************* */
+  
+    .side_nav_bar {
+      width: 12%;
+      height:170vh;
+      background-color: #0a4f5f;
+      float: left;
+    }
+  
+    .side_nav_bar label{
+      /* background-color: #ffffff; */
+      width: 100%;
+      color : white;
+    }
+  
+    .side_nav_bar_img {
+      width: 100%;
+      height: 200px;
+      background-color: #ffffff;
+      border: 1px solid #0a4f5f;
+    }
+  
+    .side_nav_bar_img img {
+      width: 110px;
+      height: 120px;
+      margin-top: 30px;
+      margin-left: 26%;
+    }
+  
+    .side_nav_bar_content {
+      /* border : 1px solid black; */
+      height: calc(100vh - 200px);
+      width: 100%;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 11.9%;
+      background-color: #0a4f5f;
+      position: absolute;
+    }
+  
+    li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+  
+    li a.active {
+      background-color: white;
+      color: black;
+    }
+  
+    li a:hover:not(.active) {
+      background-color: white;
+      color: black;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      width : 80%;
+    }
+  
+  
+  
+  
+    /* ***********************************************Side Nav Bar End***************************************** */
+  
+  
+  
+    /* ***********************************************Header CSS*********************************************** */
+  
+    .header {
+      background-color: white;
+      /* border : 1px solid #074a76; */
+      height: 65px;
+      width: 88%;
+      float: right;
+      border-bottom: 1px solid #678c96;
+    }
+  
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+  
+    .header-btn {
+      float: right;
+    }
+  
+    .dropbtn {
+      background-color: #678c96;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 6px;
+      margin-right: 6px;
+    }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 95%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      
+    }
+  
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #678c96;
+      width: 100%;
+      color: white;
+  
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+  
+    /* ***********************************************Header CSS End*********************************************** */
+  
+    /* ***********************************************Center Content*************************************************** */
+  
+    .center_content {
+      border : 1px solid black;
+      height: calc(170vh - 80px - 65px);
+      width: 88%;
+      background-color: #f5f9fc;
+      float: right;
+    }
+
+    .property_status_and_detail{
+      /* border : 1px solid black; */
+      height : 275px;
+      width : 96%;
+      margin-left: 2%;
+      margin-top: 22px;
+    }
+
+    .property_status{
+      border : 1px solid black;
+      height : 275px;
+      width : 20%;
+      float : left;
+      /* margin-left: 2%;
+      margin-top: 22px; */
+    }
+
+    #property_status_heading{
+      background : #678c96;
+      color : white;
+    }
+
+    #property_status_content{
+      padding : 120px;
+    }
+
+    .property_detail{
+      border : 1px solid black;
+      height : 275px;
+      width : 78%;
+      float : right;
+    }
+
+    #property_detail_heading{
+      background : #678c96;
+      color : white;
+    }
+
+    .form_area{
+  /* border : 1px solid black; */
+  background-color: #f5f9fc;
+  height: 1100px;
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 25px;
+  box-shadow: 0px 4px 4px 0px;
+  border-top: 20px solid #678c96;
+}
+
+
+  form input {
+  width: 96%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 2%;
+  }
+
+  form a{
+  font-size: 14px;
+  margin-left: 2%;
+  color : #678c96;
+  /* background-color: #45748e; */
+}
+
+  form button {
+    background-color: #678c96;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 89.5%;
+  }
+
+  form button:hover{
+    background-color: #0a4f5f;
+  }
+
+  form button:active{
+    background-color :#0a4f5f;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+  }
+
+  
+  
+  
+  
+    /* ***********************************************Center Content End*********************************************** */
+  </style>
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="header">
+    <div class="header-btn">
+      <div class="dropdown">
+        <button class="dropbtn">{{newsessData.first_name}} {{newsessData.last_name}}</button>
+        <div class="dropdown-content">
+          <a routerLink="/re-profile-setting">Profile</a>
+          <a href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="side_nav_bar">
+    <div class="side_nav_bar_img">
+      <img src="assets/pay2m_logo_2.JPG">
+    </div>
+    
+  
+   
+    
+    <div class="side_nav_bar_content">
+       <label>Menu</label>
+       <div style="height: 1px; width : 100%; background-color: #ffffff;"></div>
+      <ul>
+        <li><a routerLink="/tenantprofile">Dashboard</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/tenant-reg-in-property">Registration</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+        <li><a routerLink="/tenant-my-property">My Property</a></li>
+        <div style="height: 1px; width : 60%; background-color: #ffffff;"></div>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  <div class="center_content">
+
+    <div class="property_status_and_detail">
+
+      <div class="property_status">
+
+        <h5 id="property_status_heading">Property Status</h5>
+
+        <p id="property_status_content">{{property_status}}</p>
+
+      </div>
+
+      <div class="property_detail">
+
+        <h5 id="property_detail_heading">Property Detail</h5>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="form_area">
+        <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+  
+          <a for="">Landlord/Real-Estate ID</a>
+          <input type="text" name="landlordid" formControlName = "landlord_id" readonly>
+  
+          <a for="">Landlord/Real-Estate Name</a>
+          <input type="text" name="landlordid" formControlName = "real_estate_name" readonly>
+  
+          <a for="">Main Property ID</a>
+          <input type="text" name="mainpropertyid" formControlName = "main_property_id" readonly>
+  
+          <a for="">Main Property Name</a>
+          <input type="text" name="mainpropertyname" formControlName = "main_property_name" readonly>
+
+          <a for="">Main Property No</a>
+          <input type="text" name="mainpropertylegalid" formControlName = "main_property_legal_id" readonly>
+
+          <a for="">Sub Property ID</a>
+          <input type="text" name="subpropertyid" formControlName = "sub_property_id" readonly>
+  
+          <a for="">Sub Property Name</a>
+          <input type="text" name ="subpropertyname" formControlName = "sub_property_name" readonly>
+  
+          <a for="">Sub Property No</a>
+          <input type="text" name="subpropertylegalid" formControlName = "sub_property_legal_id">
+
+          <a for="">Sub Property Rent</a>
+          <input type="text" name="subpropertylegalid" formControlName = "sub_property_rent">
+
+          <a for="">Tenant ID</a>
+          <input type="text" name="tenantid" formControlName = "tenant_id">
+
+          <a for="">Tenant QID</a>
+          <input type="text" name="tenantqid" formControlName = "tenant_QID">
+
+          <a for="">Tenant Name</a>
+          <input type="text" name="tenantname" formControlName = "tenant_name">
+  
+          <!-- <a for="">Upload Image</a>
+          <input type="file" name="profile" (change)="onFileChanged($event)"> -->
+  
+          <button type = "submit">Upload Property</button>
+  
+        </form>
+  
+  </div>
+  
+  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+  
+  
+  
